@@ -1,0 +1,4 @@
+AllowOverride All
+#Require local
+    Require all granted
+</Directory>
