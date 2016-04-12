@@ -1,0 +1,37 @@
+//官方文档
+//http://help.adobe.com/en_US/fireworks/cs/extend/index.html
+
+//自定义命令
+
+//创建长方形
+//fw.getDocumentDOM().addNewRectanglePrimitive({left:0, top:0, right:'100%', bottom:'10%'}, 0);
+
+
+//删除所选 
+//fw.getDocumentDOM().deleteSelection(false);
+
+//设置文档大小尺寸
+//fw.getDocumentDOM().setDocumentCanvasSize({left:-450, top:-450, right:550, bottom:550}, true);
+
+//文件导入
+//fw.getDocumentDOM().importFile("file:///D|/ls/mms/bg_message_received.9.png", {left:469, top:88, right:469, bottom:88}, false, 0, false);
+
+
+//根据所选创建切片
+//根据所选创建
+//fw.getDocumentDOM().copyToHotspot("slice", "ask user", true);
+//绘制切片
+//fw.getDocumentDOM().addNewHotspot("slice", "rectangle", {left:255, top:248, right:382, bottom:307});
+//切片命名
+//fw.getDocumentDOM().setSliceFilename("asdf");
+
+var dom=fw.getDocumentDOM();
+var tmp;
+dom.importFile("file:///D|/ls/mms/bg_message_received.9.png", {left:469, top:88, right:469, bottom:88}, false, 0, false);
+tmp=fw.selection[0];
+alert(tmp.width);
+dom.importFile("file:///D|/ls/mms/attachment_editor_bg.9.png", {left:469, top:88, right:469, bottom:88}, false, 0, false);
+tmp=fw.selection[0];
+alert(tmp.width);
+
+//dom.insertText('123')
