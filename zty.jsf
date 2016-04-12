@@ -25,13 +25,93 @@
 //切片命名
 //fw.getDocumentDOM().setSliceFilename("asdf");
 
-var dom=fw.getDocumentDOM();
+//var dom=fw.getDocumentDOM();
+var tmp = prompt('Please enter a folder path:file:///D|/ls/mms');
+//alert(tmp);
+//
+//function a() {
+//    if (tmp) return false;
+//}
+//a();
+//return;
 var tmp;
-dom.importFile("file:///D|/ls/mms/bg_message_received.9.png", {left:469, top:88, right:469, bottom:88}, false, 0, false);
-tmp=fw.selection[0];
-alert(tmp.width);
-dom.importFile("file:///D|/ls/mms/attachment_editor_bg.9.png", {left:469, top:88, right:469, bottom:88}, false, 0, false);
-tmp=fw.selection[0];
-alert(tmp.width);
+var dom;
+//dom.importFile("file:///D|/ls/mms/bg_message_received.9.png", {left:469, top:88, right:469, bottom:88}, false, 0, false);
+//tmp=fw.selection[0];
+//alert(tmp.width);
+//dom.importFile("file:///D|/ls/mms/attachment_editor_bg.9.png", {left:469, top:88, right:469, bottom:88}, false, 0, false);
+//tmp=fw.selection[0];
+tmp = Files.enumFiles('file:///E|/-/Adobe/plugin/test');
+//tmp=Files.enumFiles('file:///E|/-/Adobe/plugin').join('-');
+//tmp=[1,2].join('-');
+//alert(fw.userSmartShapesDir);
+//alert(tmp[0]);
+//open(tmp[0], true);
+//打开文档
+fw.openDocument(tmp[1]);
+dom = fw.getDocumentDOM();
+//创建矩形
+fw.getDocumentDOM().addNewRectanglePrimitive({
+    left: 0,
+    top: 0,
+    right: dom.width,
+    bottom: dom.height
+}, 0);
+//设置颜色
+fw.getDocumentDOM().setFillNColor({
+    category: "fc_Solid",
+    ditherColors: ["#000000", "#000000"],
+    edgeType: "antialiased",
+    feather: 0,
+    gradient: null,
+    name: "fn_Normal",
+    pattern: null,
+    shape: "solid",
+    stampingMode: "blend opaque",
+    textureBlend: 0,
+    webDitherTransparent: false
+}, "#000000");
+//置于底层
+fw.getDocumentDOM().arrange("back");
+//保存文件不含图层
+//fw.saveAs(dom,tmp[0],true);
+//保存文件含图层
+//fw.saveDocument(dom, tmp[0]);
+//直接保存
+fw.saveDocument(dom);
+//关闭文档
+fw.closeDocument(dom)
+    //alert(dom.width);
+    //alert(dom.height);
+
 
 //dom.insertText('123')
+
+
+
+
+
+
+
+fw.getDocumentDOM().addNewLayer(null, false);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
