@@ -1,0 +1,2 @@
+var tmp = prompt('Please enter a number');
+fw.getDocumentDOM().rotateSelection(tmp,'autoTrimImages transformAttributes');

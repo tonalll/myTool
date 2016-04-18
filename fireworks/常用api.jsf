@@ -1,0 +1,32 @@
+var dom=fw.getDocumentDOM();
+//取消分组
+dom.ungroup();
+//分组
+dom.group("normal");
+//复制
+dom.clipCopy();
+//粘贴
+dom.clipPaste("ask user", "vector");
+//切换图层
+fw.getDocumentDOM().currentLayerNum = 1;
+选择当前图层所有
+fw.getDocumentDOM().selectAllOnLayer(1, false, false);
+//创建矩形
+fw.getDocumentDOM().addNewRectanglePrimitive({
+    left: 0,
+    top: 0,
+    right: dom.width,
+    bottom: dom.height
+}, 0);
+//根据选区创建切片
+fw.getDocumentDOM().copyToHotspot("slice", "ask user", true);
+//绘制切片
+fw.getDocumentDOM().addNewHotspot("slice", "rectangle", {left:0, top:343, right:251, bottom:416});
+//选择name值为'aa'的对象，返回数组
+var dd=dom.findNamedElements('aa');
+//对此对象进行操作
+dd[0].left=0;
+//关闭
+fw.closeDocument(dom)
+domTmp.close(false);
+

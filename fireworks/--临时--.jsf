@@ -1,0 +1,7 @@
+dom.setSelectionBounds({
+    left: 297,
+    top: 185,
+    right: 417,
+    bottom: 295
+}, "autoTrimImages transformAttributes");
+

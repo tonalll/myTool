@@ -1,0 +1,52 @@
+var dom=fw.getDocumentDOM();
+dom.selectAllOnLayer(0);
+
+fw.getDocumentDOM().selectAll();
+
+//dom.selectAllOnLayer(1);
+
+//dom.selectChildren()
+//dom.getParentLayerNum(1);
+//dom.filterSelection();
+//dom.filterSelectionByName('','aaa');
+//dom.findNamedElements('aaa');
+var tmp=fw.selection;
+var str='';
+//tmp.name='aaa';
+//alert(tmp.name);
+//    dom.insertText(tmp.name);
+//alert(tmp);
+for(var i=0;i<tmp.length;i++){
+//    alert(tmp[i]+'1');
+    str+='----'+tmp[i]
+//        tmp[0].insertText(tmp[i]);
+
+}
+//alert(str);
+dom=fw.getDocumentDOM();
+dom.selectAllOnLayer(1);
+dom.insertText(str);
+
+//for(var ddd in tmp){
+////alert(fw.selection[0][ddd]);
+////alert(ddd);
+//    dom.insertText(ddd+'------'+tmp[ddd]+'/');
+//
+//}
+
+//$.sleep(3000);
+//alert($.fileName);
+
+//dom.selectSimilar(1,"hard edge",2,"intersect")
+
+
+//dom.selectChildren(1);
+
+
+
+
+
+
+
+
+
