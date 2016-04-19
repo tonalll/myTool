@@ -1,0 +1,135 @@
+var path = Files.enumFiles('file:///E|/-/Adobe/plugin/test');
+var dom = fw.getDocumentDOM();
+var domTmp;
+var arr = [], //所有路径数组
+    obj = {}, //每个文件的宽、高、路径、名字
+    top = 10, //初始顶部距离
+    left = 10, //初始左边距离
+    width = 0, //每个文件宽度
+    height = 0, //每个文件高度
+    maxHeight = 0, //每行最大文件高度
+    fileHeight = 0, //主文件高度
+    fileWidth = 0, //方文件宽度
+    fileName = '', //文件名字
+    fileFullName = '', //文件全名
+    select; //选区
+fileHeight = dom.height;
+fileWidth = dom.width;
+
+for (var i = 0; i < path.length; i++) {
+    zty(i);
+}
+sortAndClip();
+////////////////////////////////////////////////////////////////////////
+//排序和创建切片
+function sortAndClip() {
+    arr.sort(function (a, b) {
+        //        return obj[a].width - obj[b].width;
+        return obj[b].width - obj[a].width;
+    });
+    top = 10;
+    left = 10;
+    for (var i = 0; i < arr.length; i++) {
+        if (left + 10 + obj[arr[i]].width > fileWidth) {
+            left = 10;
+            top += maxHeight + 10;
+            maxHeight = obj[arr[i]].height;
+        }
+        //        移动基层位置
+        dom.selectNone();
+        select = dom.findNamedElements(obj[arr[i]].fileName)[0];
+        select.left = left;
+        select.top = top;
+        //        创建切片
+        dom.copyToHotspot("slice", "ask user", true);
+        //    设置切片名称
+        dom.setSliceFilename(obj[arr[i]].fileName);
+        //        移动导入图标位置
+        dom.selectNone();
+        select = dom.findNamedElements(obj[arr[i]].fileName + 'clip')[0];
+        select.left = left + (obj[arr[i]].width - select.width) / 2;
+        select.top = top + (obj[arr[i]].height - select.height) / 2;
+
+        maxHeight = maxHeight < obj[arr[i]].height ? obj[arr[i]].height : maxHeight;
+        left += obj[arr[i]].width + 10;
+    }
+}
+
+////////////////////////////////////////////////////////////////////////
+//导入文件并排版
+function zty(_i) {
+    arr[_i] = path[_i];
+    //    alert(_i);
+    fw.openDocument(path[_i]);
+    domTmp = fw.getDocumentDOM();
+    width = domTmp.width;
+    height = domTmp.height;
+    //    换行
+    if (left + 10 + width > fileWidth) {
+        left = 10;
+        top += maxHeight + 10;
+        maxHeight = height;
+    }
+    dom.currentLayerNum = 0;
+    dom.addNewRectanglePrimitive({
+        left: left,
+        top: top,
+        right: left + width,
+        bottom: top + height
+    }, 0);
+    dom.setFillNColor({
+        category: "fc_Solid",
+        ditherColors: ["#000000", "#000000"],
+        edgeType: "antialiased",
+        feather: 0,
+        gradient: null,
+        name: "\u5B9E\u5FC3",
+        pattern: null,
+        shape: "solid",
+        stampingMode: "blend opaque",
+        textureBlend: 0,
+        webDitherTransparent: false
+    }, "#000000");
+    //alert(path[0]);
+    //alert(Files.getFilename(path[0]));
+    fileFullName = Files.getFilename(path[_i]);
+    //alert(fileName.slice(0, fileName.lastIndexOf('.')));
+    fileName = fileFullName.slice(0, fileFullName.lastIndexOf('.'));
+    //    把文件宽度放入obj对象
+    obj[path[_i]] = {};
+    obj[path[_i]].width = width;
+    obj[path[_i]].height = height;
+    obj[path[_i]].fileName = fileName;
+    //    设置基层名称
+    dom.setElementName(fileName);
+
+    select = fw.selection[0];
+    //alert(fw.selection[0].width);
+    domTmp.clipCopy();
+    dom.selectNone();
+    dom.currentLayerNum = 1;
+    dom.clipPaste("ask user", "vector");
+    //    设置导入对象名称
+    dom.setElementName(fileName + 'clip');
+    //fw.openDocument('file:///E|/-/Adobe/plugin/my.fw.png');
+    //select = fw.selection;
+    dom.setSelectionBounds({
+        left: left + (width - select.width) / 2,
+        top: top + (height - select.height) / 2,
+        right: left + (width - select.width) / 2 + select.width,
+        bottom: top + (height - select.height) / 2 + select.height,
+    }, "autoTrimImages transformAttributes");
+    domTmp.close(false);
+    maxHeight = maxHeight < height ? height : maxHeight;
+    left += width + 10;
+}
+
+
+
+
+
+
+
+
+
+//
