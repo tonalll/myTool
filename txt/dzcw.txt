@@ -1,0 +1,5 @@
+$ git tag
+v104-config
+
+Administrator@PC-20140401DZQD /D/myWorkSapce/dzcw (master)
+$ git checkout v104-config conf/config.properties

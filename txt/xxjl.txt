@@ -1,0 +1,6 @@
+2016-03-23
+npm ѧϰ
+https://github.com/npm/how-to-npm
+
+cnpm
+http://npm.taobao.org/

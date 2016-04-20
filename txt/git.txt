@@ -1,0 +1,73 @@
+mkdir learngit 创建learngit目录
+cd learngit 进入learngit目录
+pwd 显示当前路径
+clear 清屏
+
+git add readme.txt 把readme.txt加入缓存
+git commit -m '111' 把缓存加入仓库当前分支
+
+git add z.txt 把z.txt修改加入缓存
+git commit -m '222' 把缓存加入仓库当前分支
+
+git reset --hard HEAD^ 回到上一版本 工作区和缓存区会丢失当前
+git reset --hard HEAD^^
+git reset --hard HEAD~100
+
+git log 状态日志 log状态下按q退出日志
+
+cat z.txt 查看z.txt文档内容
+
+git reflog 指针操作日志 提交 检出 跳转等
+
+git checkout -- z.txt 操作工作区 最新修改会丢失，从缓存区拿状态重置工作区，若缓存区没有，则从仓库当前分支拿。此操作不影响缓存区和仓库
+git reset HEAD z.txt 操作缓存区。缓存区内容会丢失。 从仓库当前分支读取最后状态重置缓存区。
+
+rm test.txt 删除文件
+git rm test.txt 删除文件 操作工作区，直接放入缓存。
+
+git checkout -b dev 创建并切换到dev分支
+git checkout master 切换到master分支
+git branch 查看分支情况
+git branch -d dev 删除dev分支
+git branch <name> 创建分支
+git merge <name> 合并到当前分支
+
+git stash Bug 分支
+git checkout -b t 创建新分支
+修改··提交··切换master分支··合并t分支··删除t分支
+stash apply 恢复，但是恢复后，stash内容并不删除
+stash pop 恢复的同时把stash内容也删了
+
+git branch -D <name> 强行删除未合并的分支
+
+git tag v1 创建v1标签
+git tag v1 6224937 创建commit id是6224937的标签v1
+git tag -a v0.1 -m "version 0.1 released" 3628164 创建commit id是6224937的标签v1 带有说明的标签
+git show 查看标签说明 
+git tag -d v1 删除v1标签
+git push origin v1 推送标签到远程仓库
+git push origin --tags 推送所有标签到远程仓库
+删除远程标签
+git tag -d v1 先删除本地标签
+git push origin :refs/tags/v1 再删除远程标签
+git tag # 当前仓库的所有标签
+git tag 当前分支的所有标签
+
+关联本地库到远程
+git remote add origin https://github.com/tonalll/node.git
+本地推送到远程
+git push -u origin master
+
+git update-index --assume-unchanged /path/to/file       #忽略跟踪
+
+git update-index --no-assume-unchanged /path/to/file  #恢复跟踪
+
+windows无法建立没有名字的文件，要在dos下操作
+cd.>aaa
+.git\info\exclude
+config.properties
+#config.properties文件已加入管理，所以不管用了
+config.properties
+service-old.js
+service-old2.js
+service-old3.js

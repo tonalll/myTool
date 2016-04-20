@@ -1,0 +1,138 @@
+--save-dev保存到devDependencies
+ --save 保存到dependencies
+
+
+{
+  //name：必须，标识；不能包含node，js等字段；将会是url的一部分
+  //命令行的参数，目录名。所以不能移点号和下划线开头
+  "name": "hello",
+  //name和version组成的标识是唯一的，改变包的时候应该同时改变version
+  "version": "0.1.1",
+  //简介，方便npm search中查找
+  "description": "test cortex ",
+  //程序入口模块的id，调用此包时，返回的是该模块(index)的导出(export)
+  "main": "index.js",
+  //bin：需要安装到path的执行文件 
+  "bin": {
+    "cortex": "bin/cortex-cli.js"
+  },
+  /*
+  *repository: 代码存放地址
+  */
+  "repository": "git://github.com/panqianjin/hello.git",
+   //同description
+  "keywords": [
+    "test",
+    "cortex"
+  ],
+  //普通licesnse 可直接使用
+  "license": "MIT",
+  "author": {
+    "name": "qianjin.pan",
+    "email": "qinajin.pan@dianping.com"
+  },
+  //问题追踪系统的url或者邮箱
+  "bugs": {
+    "url": "http://github.com/panqianjin/hello/issues"
+  },
+  /*
+  *dependencies: 当前包所依赖的其他包。即生产环境
+  *devDependencies: 外部测试或文档框架。即测试环境依赖 开发环境
+  *peerDependencies: 兼容性依赖，适于插件。插件需求的约束越弱越好。如：
+  *"peerDependencies":{
+  *     "tea": "2.x" //确保2.x的版本不会爆错
+  * }
+  *bundledDependencies: 发布包的同时打包包的其他依赖
+  *optionalDependencies: 默写依赖没有找到或者安装失败时，npm继续执行。
+  */
+  
+  /*  版本格式可以是下面任一种：
+
+    version 完全匹配
+    >version 大于这个版本
+    >=version大于或等于这个版本
+    <version
+    <=version
+    ~version 非常接近这个版本
+    ^version 与当前版本兼容
+    1.2.x X代表任意数字，因此1.2.1, 1.2.3等都可以
+    http://... Unix系统下使用的tarball的URL。
+    * 任何版本都可以
+    ""任何版本都可以
+    version1 - version2  等价于 >=version1 <=version2.
+    range1 || range2 满足任意一个即可
+    git... Git地址
+    user/repo
+   */
+  "dependencies": {
+    "MD5": "^1.2.1",
+    "ansicolors": "^0.3.2",
+    "argv-parser": "^0.1.4",
+    "asks": "^1.0.0",
+    "async": "^0.2.9",
+    "columnify": "^1.1.0",
+    "comfort": "^4.0.0",
+    "cortex-command-errors": "^1.0.0",
+    "cortex-init-prompts": "^1.0.0",
+    "cortex-ls": "^1.0.0",
+    "cortex-package-files": "^0.3.0",
+    "cortex-profile": "^3.1.0",
+    "cortex-scaffold-generator": "^4.0.0",
+    "cortex-search-utils": "^1.0.0",
+    "cortex-shrinkwrap": "^5.0.0",
+    "editor": "^0.0.4",
+    "express": "^3.4.8",
+    "fs-expand": "^0.2.0",
+    "fs-extra": "^0.11.0",
+    "fstream": "^0.1.24",
+    "glob": "^4.0.2",
+    "ignore": "^2.2.14",
+    "loggie": "^0.1.8",
+    "make-array": "^0.1.1",
+    "mix2": "^1.0.0",
+    "neuron-builder": "^4.0.0",
+    "neuron-graph": "^1.0.0",
+    "neuronjs": "^8.3.0",
+    "neuropil": "^7.0.0",
+    "open": "0.0.4",
+    "read-cortex-json": "^3.6.0",
+    "request": "^2.34.0",
+    "semver-extra": "^1.0.3",
+    "shrinked": "^0.1.2",
+    "spawns": "^0.2.0",
+    "stares": "^1.5.0",
+    "tar": "^0.1.18"
+  },
+  
+  
+  "devDependencies": {
+    "mocha": "*",
+    "chai": "*",
+    "fs-sync": "^0.2.4",
+    "jsonfile": "~1.1.1"
+  },
+  //engines: 既可以指定node版本也可以指定npm版本
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  /*script 由脚本命令组成的hash对象在包不同生命周期运行
+  *key 时生命周期事件，value时要运行的命令
+  *
+  */
+  "scripts": {
+    "test": "make test"
+  },
+  /*
+  *homepage:项目官网
+  */
+  "homepage": "http://github.com/panqianjin/hello"
+}
+/*"scripts": {"start": "node server.js"}
+如果包的根目录有server.js文件，npm会默认将start命令设置为node server.js。
+"scripts":{"preinstall": "node-waf clean || true; node-waf configure build"}
+如果包的根目录有wscript文件，npm会默认将preinstall命令用node-waf进行编译。
+"scripts":{"preinstall": "node-gyp rebuild"}
+如果包的根目录有binding.gyp文件，npm会默认将preinstall命令用node-gyp进行编译。
+"contributors": [...]
+如果包的根目录有AUTHORS文件，npm会默认逐行按Name <email> (url)格式处理，邮箱和url是可选的。#号和空格开头的行会被忽略。
+*/

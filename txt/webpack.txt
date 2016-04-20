@@ -1,0 +1,108 @@
+webpack 执行一次开发时的编译
+webpack -p 执行一次生成环境的编译（压缩）
+webpack --watch 在开发时持续监控增量编译（很快）
+webpack -d 让他生成SourceMaps
+webpack --progress 显示编译进度
+webpack --colors 显示静态资源的颜色
+webpack --sort-modules-by, --sort-chunks-by, --sort-assets-by 将modules/chunks/assets进行列表排序
+webpack --display-chunks 展示编译后的分块
+webpack --display-reasons 显示更多引用模块原因
+webpack --display-error-details 显示更多报错信息
+
+webpack 插件 
+html-webpack-plugin创建html文件
+open-browser-webpack-plugin 自动打开浏览器 起一个服务
+
+
+// definePlugin 接收字符串插入到代码当中, 所以你需要的话可以写上 JS 的字符串
+var devFlagPlugin = new webpack.DefinePlugin({
+  __DEV__: JSON.stringify(JSON.parse(process.env.DEBUG || 'false'))
+});
+
+分模块加载
+    <script src="init.js"></script>
+    <script src="bundle1.js"></script>
+    <script src="bundle2.js"></script>
+var CommonsChunkPlugin = require("webpack/lib/optimize/CommonsChunkPlugin");
+module.exports = {
+  entry: {
+    bundle1: './main1.jsx',
+    bundle2: './main2.jsx'
+  },
+  output: {
+    filename: '[name].js'
+  },
+  module: {
+    loaders:[
+      { test: /\.js[x]?$/, exclude: /node_modules/, loader: 'babel-loader?presets[]=es2015&presets[]=react' },
+    ]
+  },
+  plugins: [
+    new CommonsChunkPlugin('init.js')
+  ]
+}
+
+
+UglifyJsPlugin插件 压缩js
+var uglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
+plugins: [
+    new uglifyJsPlugin({
+      compress: {
+        warnings: false
+      }
+    })
+
+entry输入文件路径
+output输出文件路径
+//.css 文件使用 style-loader 和 css-loader 来处理
+{ test: /\.css$/, loader: 'style-loader!css-loader' },
+ test: /\.css$/,
+loader: 'style-loader!css-loader?modules'
+//.js 文件使用 jsx-loader 来编译处理
+{ test: /\.js$/, loader: 'jsx-loader?harmony' },
+//.scss 文件使用 style-loader、css-loader 和 sass-loader 来编译处理
+{ test: /\.scss$/, loader: 'style!css!sass?sourceMap'},
+//图片文件使用 url-loader 来处理，小于8kb的直接转为base64
+{ test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192'}
+"-loader"其实是可以省略不写的，多个loader之间用“!”连接起来。
+
+loader: 'babel-loader?presets[]=es2015&presets[]=react',
+等同于
+loader: 'babel-loader',
+                query: {
+                    //添加两个presents 使用这两种presets处理js或者jsx文件
+                    presets: ['es2015', 'react']
+                }
+
+test: /\.css$/,
+                exclude: "../node_modules/",
+                loader: 'style-loader!css-loader'
+
+externals定义外部依赖
+
+
+
+
+module.exports = {
+  entry: {
+    bundle1: './main1.js',
+    bundle2: './main2.js'
+  },
+  output: {
+    filename: '[name].js'
+  }
+};
+
+module: {
+        //加载器配置
+        loaders: [
+            //.css 文件使用 style-loader 和 css-loader 来处理
+            { test: /\.css$/, loader: 'style-loader!css-loader' },
+            //.js 文件使用 jsx-loader 来编译处理
+            { test: /\.js$/, loader: 'jsx-loader?harmony' },
+            //.scss 文件使用 style-loader、css-loader 和 sass-loader 来编译处理
+            { test: /\.scss$/, loader: 'style!css!sass?sourceMap'},
+            //图片文件使用 url-loader 来处理，小于8kb的直接转为base64
+            { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192'}
+        ]
+    }

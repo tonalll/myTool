@@ -1,0 +1,26 @@
+mkdir learngit 创建learngit目录
+cd learngit 进入learngit目录
+pwd 显示当前路径
+
+git add readme.txt 把readme.txt加入缓存
+git commit -m '111' 把缓存加入仓库当前分支
+
+git add z.txt 把z.txt修改加入缓存
+git commit -m '222' 把缓存加入仓库当前分支
+
+git reset --hard HEAD^ 回到上一版本 工作区和缓存区会丢失当前
+git reset --hard HEAD^^
+git reset --hard HEAD~100
+
+git log 状态日志
+
+cat z.txt 查看z.txt文档内容
+
+git reflog 指针操作日志 提交 检出 跳转等
+
+git checkout -- z.txt 操作工作区 最新修改会丢失，从缓存区拿状态重置工作区，若缓存区没有，则从仓库当前分支拿。此操作不影响缓存区和仓库
+git reset HEAD z.txt 操作缓存区。缓存区内容会丢失。 从仓库当前分支读取最后状态重置缓存区。
+
+rm test.txt 删除文件
+git rm test.txt 删除文件 操作工作区，直接放入缓存。
+
