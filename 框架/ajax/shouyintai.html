@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>易瑞云代账-收银台</title>
+    <script src="/resource/new/js/jquery-1.11.2.min.js?v=${js_version}" type="text/javascript" charset="utf-8"></script>
+    <script src="/resource/new/js/float.js?v=${js_version}" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="/resource/new/css/base.css?v=${js_version}" />
+    <link rel="stylesheet" type="text/css" href="/resource/new/css/dingdan.css?v=${js_version}" />
+</head>
+
+<body>
+    <div id="head" class="l-table-collapse">
+        <div style="width: 0.3em;" class="l-table-cell"></div>
+        <div class="l-table-cell logo"></div>
+        <div class="l-table-cell l-align-middle title">代账人</div>
+        <div class="l-table-cell top-name l-align-right">企业名字</div>
+    </div>
+    <div class="l-margin-0auto" style="width:1000px">
+        <div class="l-table">
+            <div class="l-table-cell l-align-middle l-font-size-16 l-font-yahei l-font-bold">收银台</div>
+            <div class="l-table-cell l-float-right">
+                <div class="status status-2 l-table-collapse">
+                    <div class="l-table-cell status-unit-1">1.填写核对订单信息</div>
+                    <div class="l-table-cell status-space-1"></div>
+                    <div class="l-table-cell status-unit-2">2.支付</div>
+                    <div class="l-table-cell status-space-2"></div>
+                    <div class="l-table-cell status-unit-3">3.完成支付</div>
+                </div>
+            </div>
+        </div>
+        <div class="l-table">
+            <div class="l-table-cell">
+                订单提交成功，请您尽快付款！订单号：2016012800025
+                <br> 请您在提交订单后24小时内完成支付，否则订单会自动取消。
+            </div>
+            <div class="l-table-cell"> 应付金额980.00元 </div>
+        </div>
+        <div class="m-title">
+            支付方式：</div>
+        <div class="l-divider"></div>
+        <div class="l-table payList">
+            <div class="l-table-cell select alipay"></div>
+            <div class="l-table-cell none"></div>
+            <div class="l-table-cell none"></div>
+            <div class="l-table-cell none"></div>
+            <div class="l-table-cell none"></div>
+        </div>
+        <div class="l-divider"></div>
+        <a href="" target="_blank" class="m-button goPay">立即支付</a>
+    </div>
+
+
+<div class="dialog">
+    <div class="title">登录平台支付</div>
+    <div class="close"></div>
+    <div class="textContent">请您在新打开的支付平台页面进行支付，支付完成前请不要关闭该窗口。</div>
+    <div class="l-table" style="margin:10px 0">
+    <div class="l-table-cell" style="width:30%"></div>   
+        <a class="l-table-cell m-button payError" href="/resource/new/ajax/question.html" target="_blank">支付遇到问题</a>
+        <div class="l-table-cell m-button paySuccess" data-id='123' data-url='/'>支付完成</div>
+    </div>
+</div>
+
+<div class="dialog-msg">
+    <div class="title">提示信息</div>
+    <div class="close-msg"></div>
+    <div class="textContent">服务器无响应，请联系管理员。</div>
+</div>
+
+</body>
+<script>
+    $(document).ready(function(){
+        $('.goPay').on({
+            click:function(){
+                $('.dialog').float({
+                            close: '.close'
+                        });
+            }
+        });
+        $('.paySuccess').on({
+            click:function(){
+                var $this=$(this);
+                $.ajax({
+                    url: $this.attr('data-url'),
+                    type: 'post',
+                    data: {id: $this.attr('data-id')},
+                }).done(function(data) {
+                    // console.log("success");
+                    if(data.frag){
+                        // 支付成功
+                        location='/auth/home'
+                    }else{
+                        $('.close').click();
+                       $('.dialog-msg').float({
+                            close: '.close-msg'
+                        });
+                       $('.dialog-msg .textContent').html(data.msg);
+                    }
+                }).fail(function(){
+                        $('.close').click();
+                       $('.dialog-msg').float({
+                            close: '.close-msg'
+                        });
+                });
+                
+                
+            }
+        });
+    });
+</script>
+</html>

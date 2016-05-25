@@ -1,0 +1,106 @@
+@charset "utf-8";
+/*主色调和同类色 
+#009D96 #007973 #005551
+*/
+body,html{height: 100%;width: 100%;overflow: auto!important;font-family: "微软雅黑"}
+
+/*头部*/
+#head{height: 4em;font-size: 1em;background: #2e8cf0;}
+#start{height: 4em;width: 4em;position: relative;}
+.logo{height: 4em;width: 4em;background: url(../img/logo.png) center center no-repeat;cursor: pointer;}
+#head .title{color: #fff;}
+#head .top-name{color: #fff;vertical-align: middle;padding-right: 1em;}
+
+.status{background: #E2E2E2;width: auto;}
+.status-unit-1,.status-unit-2,.status-unit-3{width: 200px;}
+.status .l-table-cell{height: 30px;vertical-align: middle;text-indent: 10px}
+.status-1 .status-unit-1{background: #00B9FF;color: #fff;}
+.status-1 .status-space-1{width: 19px;background: #00B9FF;color: #fff;background: url(../img/status-space.png);background-color: #E2E2E2;}
+.status-1 .status-space-2{width: 19px;}
+
+.status-2 .status-unit-1{background: #00B9FF;color: #fff;}
+.status-2 .status-unit-2{background: #00B9FF;color: #fff;}
+.status-2 .status-space-1{width: 19px;background: #00B9FF;}
+.status-2 .status-space-2{width: 19px;background: #00B9FF;color: #fff;background: url(../img/status-space.png);background-color: #E2E2E2;}
+
+.package{float: left;width: 300px;margin: 10px;cursor: pointer;border: 2px solid #ccc;}
+.package:hover{border: 2px solid #00b9ff;}
+.package-select{border: 2px solid #00b9ff;}
+.package .title{font-weight: bold;}
+.package .price{color: #f00;}
+.package .explain{border: 1px solid #ddd;border-top: none;width: 289px;padding: 5px;}
+.fapiaoInfo{display: none;}
+.fapiaoInfo select{ border:1px solid #ccc; background:#FFFFFF;}
+.fapiaodizhi{border: 1px solid #ccc;padding: 0.2em 0;text-indent: 0.5em;}
+/*支付页面 */
+.payList .l-table-cell{position: relative;border: 2px solid #ccc;height: 50px;width: 20%;vertical-align: middle;text-align: center;cursor: pointer;}
+.payList .select{border: 2px solid #00b9ff;}
+.payList .none{border: none;}
+.payList .alipay{background: url(../img/alipay.png) center center no-repeat;}
+
+.goPay{padding: 20px 40px;float: right;font-size: 20px;}
+.dialog{width: 500px;position: absolute;display: none;background: #fff;}
+.dialog .title{padding: 10px;border-bottom: 1px solid #ddd;font-weight: bold;background: #eee;}
+.textContent{padding: 30px 10px;border-bottom: 1px solid #ddd;}
+.close{height: 12px;width: 16px;cursor:pointer;position: absolute;top: 12px;right: 10px;background:url("../img/m-dialog-control.png") no-repeat scroll -10px -54px}
+.payError{padding:10px 20px;background: #aaa;}
+.paySuccess{padding:10px 20px;}
+
+.dialog-msg{width: 500px;position: absolute;display: none;background: #fff;}
+.dialog-msg .title{padding: 10px;border-bottom: 1px solid #ddd;font-weight: bold;background: #eee;}
+.textContent{padding: 30px 10px;border-bottom: 1px solid #ddd;}
+.close-msg{height: 12px;width: 16px;cursor:pointer;position: absolute;top: 12px;right: 10px;background:url("../img/m-dialog-control.png") no-repeat scroll -10px -54px}
+/*常见问题页面 */
+
+.question-list .title{background: url(../img/question.png) left top no-repeat;padding-left: 30px;font-weight: bold;line-height: 30px;}
+.question-list .answer{padding-left: 30px;color: #666;margin-bottom: 10px;}
+
+
+/*订单管理页面*/
+.list-head{background: #eee;padding: 1em 0;text-indent: 1em;}
+.list-unit{margin: 1em auto;border: 1px solid #ccc;background: #eee;}
+.unit-title{padding: 1em;}
+.list-body{background: #fff;}
+.list-body .l-table-cell{padding: 1em;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

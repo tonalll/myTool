@@ -1,0 +1,79 @@
+*{margin: 0;padding: 0;}
+body{background: #ecebeb}
+.warpper{width: 1000px; margin: 0 auto;}
+.header{ height: 68px; background: #2e8cf0 ;}
+.header,.mian{margin-bottom: 20px;}
+.l_table{display: table; height: 68px;}
+.l_table_cell{display: table-cell; vertical-align: middle;}
+.logo_ft{font-size: 2em; font-weight: bold; color: #fff;}
+.side_table{display: table; width: 100%; border-spacing: 2em;}
+.side_table_cell{display: table-cell; background: #fff;}
+.tab-title{ width: 215px; float: left; margin-right: 20px; background: #fff;}
+.sidebar-tab{ overflow: auto;}
+.tab-title .selected{color:#356aa0;border-bottom:0px;} /*标题被选中时的样式*/
+.tab-title ul{padding:0 10px;}
+.tab-title ul li{cursor: pointer; margin: 10px 0; list-style: none; background: #f0efef ;  padding: 5px 10px;border-left: 3px solid #f0efef; }
+.tab-title ul li.selected{ border-left: 3px solid #03a9f4;}
+.tab-content{background: #fff; float: right; width: 725px; padding: 20px;}
+.tab-content .tab_con{display:none;} /*默认让第一块内容显示，其余隐藏*/
+.tab-content .tab_con{padding:5px 10px;overflow:hidden;}
+.tab-content ul li{padding-top:5px;height:20px;} 
+
+.logo {
+    background: rgba(0, 0, 0, 0) url("../img/home/logo2.png") no-repeat scroll center center;
+    cursor: pointer;
+    height: 4em;
+    width: 4em;
+}
+.footer{
+	text-align: center;
+	padding: 20px 0;
+	background: #555555;
+	color: #fff;
+	font-size: 14px;
+}
+.footer a{
+	text-decoration: none;
+}
+/*联动*/
+.linkage{
+	min-height: 300px;
+	border:1px solid #ccc;
+	padding: 10px;
+}
+.title_list{
+	overflow: hidden;
+}
+.title_list .tit_info{
+	float: left;
+	margin-right: 10px;
+	border: 1px solid #ccc;
+	cursor: pointer;
+}
+.add_tit_style{
+	border:1px solid #f60!important;
+}
+.center_ft{
+	text-align: center;
+	margin-bottom: 10px;
+}
+.tab_con{
+	font-size: 14px;
+	line-height: 2;
+	color: #333;
+}
+.tab_con .text_info{
+	text-indent: 2em;
+}
+.tab_con .bt_info{
+	color: #000;
+	margin: 5px 0;
+	font-weight: bold;
+}
+.tab_con p{
+	margin-bottom: 10px;
+}
+.red{
+	color: #ff0000;
+	font-style: normal;
+}

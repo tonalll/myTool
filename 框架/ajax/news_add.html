@@ -1,0 +1,145 @@
+<div class="cont_info">
+	<div class="say_cont" data-say-table="1" data-say-start="1" data-say-has="2">
+		<div class="l-segment l-border-0">
+			<div class="news_left_font">
+				2015年5月折旧清单
+			</div>
+		    <div class="news_align_right">
+		       <form action="${root!}/account/home_account_closing/index_home" pageLayout='window' class="pageSubmit">
+			        <input type="hidden" class="k_say_input" id="k_say_input"  name="k_say_input">
+			        <div class="head say_con_list">
+			        	<div class="l-table-cell" style="width:60px; height:25px;">
+			                <select class="m-select" name="voucher_year" style="width:80px;height:1.3em;">
+			                    <option>2015</option>
+			                </select>
+			            </div>
+			            <div class="say_month">1月</div>
+			            <div class="say_month">2月</div>
+			            <div class="say_month">3月</div>
+			            <div class="say_month">4月</div>
+			            <div class="say_month">5月</div>
+			            <div class="say_month">6月</div>
+			            <div class="say_month">7月</div>
+			            <div class="say_month">8月</div>
+			            <div class="say_month">9月</div>
+			            <div class="say_month">10月</div>
+			            <div class="say_month">11月</div>
+			            <div class="say_month">12月</div>
+			           
+			        </div>
+			    </form>
+		    </div>
+		</div>
+		<div class="m-grid-head">
+		    <table>
+		        <thead>
+		            <tr>
+		                <th width='5'>行次</th>
+		                <th width='20'>资产名称</th>
+		                <th width='10'>购买日期</th>
+		                <th width='15'>原值</th>
+		                <th width="10">年限</th>
+		                <th width='10'>残值率(%)</th>
+		                <th width='10'>期初累计折旧</th>
+		                <th width='10'>净值</th>
+		                <th width='13'>月折旧额</th>
+		                <th width='10'>本月折旧</th>
+		                <th width='10'>录入日期</th>
+		                <th width='10'>操作</th>
+		            </tr>
+		        </thead>
+		    </table>
+		</div>
+		<div class="m-grid-body m-scrollbar news_tablebg" data-url="resource/new/ajax/acc-data.json" data-id="1">
+		    <table>
+		        <tbody>
+		        	<tr>
+		        	  	<td id="tb1">1</td>
+		        	  	<td id="tb2"><p class="name_table_bt">这是标题</p></td>
+		        	  	<td id="tb3"><p class="data_table_year">201504</p></td>
+		        	  	<td id="tb4"><p class="right_ft original_val">100</p></td>
+		        	  	<td id="tb5"><p class="right_ft">100.00</p></td>
+		        	  	<td id="tb6"><p class="right_ft">100.00</p></td>
+		        	  	<td id="tb7"><p class="right_ft original_depre">100.00</p></td>
+		        	  	<td id="tb8"><p class="right_ft">100.00</p></td>
+		        	  	<td id="tb9"><p class="right_ft">100.00</p></td>
+		        	  	<td id="tb10"><p class="right_ft">100.00</p></td>
+		        	  	<td id="tb11"><p class="right_ft">100.00</p></td>
+		        	  	<td id="tb7"></td>
+		        	</tr>
+		        	<tr class="list_add this_add">
+		        	  	<td>2</td>
+		        	  	<td><input type="text" class="name_table_bt"></td>
+		        	  	<td><input type="text" class="data_table_year" value=""></td>
+		        	  	<td><input type="text" class="right_ft original" value=""></td>
+		        	  	<td><input type="text" class="right_ft" value=""></td>
+		        	  	<td><input type="text" class="right_ft" value=""></td>
+		        	  	<td>
+		        	  		<input type="text" class="right_ft last_val" value="">
+		        	  		
+		        	  	</td>
+		        	  	<td></td>
+		        	  	<td></td>
+		        	  	<td></td>
+		        	  	<td></td>
+		        	  	<td>
+		        	  		<div class="pos_btn">
+		        	  			<a href="#" class="btn_del_pos">删除</a>
+		        	  			<a href="#" class="btn_empty">清空</a>
+		        	  			<a href="#" class="btn_restore">还原</a>
+		        	  		</div>
+		        	  	</td>
+		        	</tr>
+		        	<tr>
+		        	  	<td></td>
+		        	  	<td>合计</td>
+		        	  	<td></td>
+		        	  	<td><p class="right_ft total_bal">22222</p></td>
+		        	  	<td></td>
+		        	  	<td></td>
+		        	  	<td><p class="right_ft total_depre">5665121</p></td>
+		        	  	<td><p class="right_ft">45445654</p></td>
+		        	  	<td><p class="right_ft">51451</p></td>
+		        	  	<td><p class="right_ft">5454</p></td>
+		        	  	<td></td>
+		        	  	<td></td>
+		        	</tr>
+		        </tbody>
+		    </table>
+		</div>
+
+
+
+	</div>
+</div>
+
+<script>
+	$(function(){
+		// $('.pos_rightimg').on({
+	 //        click:function(){
+	 //            $(this).parents('.pos_cont').hide().empty();
+	 //        }
+	 //    });
+	    // $('.say_table_cont').each(function(index, el){
+	    // 	var $say_table_form = $(this).find('form');
+	    //     var $say_table_input = $say_table_form.find('.say_table_input');
+	    //     var $say_table_month = $('.say_con_list').find('.sya_table_month');
+	    //     var $hasasay=$('.say_table_cont').attr('data-saytable');
+	    //     $say_table_month.each(function(index, el) {
+	    //         var $this = $(this);
+	    //         $this.on({
+	    //             click: function() {
+	    //                 $say_table_input.val(index + 1);
+	    //                 // console.info($k_table_form.serialize());
+	    //                 // console.info($input.val());
+	    //                 $say_table_form.submit();
+	    //             }
+	    //         });
+	    //     });
+	    //     $say_table_month.eq($hasasay-1).addClass('k_table_bg');
+	    // });
+	    
+
+    });
+
+</script>

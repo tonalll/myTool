@@ -1,0 +1,154 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>易瑞云代账-订单结算</title>
+    <script src="/resource/new/js/jquery-1.11.2.min.js?v=${js_version}" type="text/javascript" charset="utf-8"></script>
+    <script src="/resource/new/js/jquery.validate.js?v=${js_version}" type="text/javascript" charset="utf-8"></script>
+    <script src="/resource/new/js/onoff.js?v=${js_version}" type="text/javascript" charset="utf-8"></script>
+    <script src="/resource/new/js/area.js?v=${js_version}" type="text/javascript" charset="utf-8"></script>
+    <script src="/resource/new/js/dingdan.js?v=${js_version}" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="/resource/new/css/base.css?v=${js_version}" />
+    <link rel="stylesheet" type="text/css" href="/resource/new/css/dingdan.css?v=${js_version}" />
+</head>
+
+<body>
+    <div id="head" class="l-table-collapse">
+        <div style="width: 0.3em;" class="l-table-cell"></div>
+        <div class="l-table-cell logo"></div>
+        <div class="l-table-cell l-align-middle title">代账人</div>
+        <div class="l-table-cell top-name l-align-right">企业名字</div>
+    </div>
+    <div class="l-margin-0auto" style="width:1000px">
+        <div class="l-table">
+            <div class="l-table-cell l-align-middle l-font-size-16 l-font-yahei l-font-bold">订单结算</div>
+            <div class="l-table-cell l-float-right">
+                <div class="status status-1 l-table-collapse">
+                    <div class="l-table-cell status-unit-1">1.填写核对订单信息</div>
+                    <div class="l-table-cell status-space-1"></div>
+                    <div class="l-table-cell status-unit-2">2.支付</div>
+                    <div class="l-table-cell status-space-2"></div>
+                    <div class="l-table-cell status-unit-3">3.完成支付</div>
+                </div>
+            </div>
+        </div>
+        <form class="dingdan" data-id='123' action="shouyintai.html">
+            <div class="l-segment" style="padding-bottom:1em">
+                <div class="m-title">企业名称</div>
+                <div class="l-divider-005"></div>
+                <div class="l-table">
+                    <div class="l-table-cell">
+                        <input class="l-border c-bdColor-b" type="text" name="a">
+                    </div>
+                    <div class="l-table-cell">说明</div>
+                </div>
+                <div class="m-title">套餐类型</div>
+                <div class="l-divider-005"></div>
+                <input class="packageType" type="hidden" name="asfd" value="122">
+                <table class="package package-select" data-val=122>
+                    <tr>
+                        <td class="title">
+                            套餐一
+                        </td>
+                        <td class="price">
+                            ￥10
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="explain">
+                            套餐说明
+                        </td>
+                    </tr>
+                </table>
+                <table class="package" data-val=122>
+                    <tr>
+                        <td class="title">
+                            套餐一
+                        </td>
+                        <td class="price">
+                            ￥1000
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="explain">
+                            套餐说明
+                        </td>
+                    </tr>
+                </table>
+                <div class="l-float-clear"></div>
+                <div class="m-title">联系电话</div>
+                <div class="l-divider-005"></div>
+                <div class="l-table">
+                    <div class="l-table-cell">
+                        <input class="l-border c-bdColor-b" type="text" name="a">
+                    </div>
+                    <div class="l-table-cell">说明</div>
+                </div>
+                <div class="m-title">发票信息</div>
+                <div class="l-divider-005"></div>
+                <div class="l-fields">
+                    <div class="l-field">
+                        <label for=""></label>
+                        <input type="radio" data-text='不开发票' name="kfp" class="bukaifapiao" checked="checked" value="1">
+                    </div>
+                    <div class="l-field">
+                        <label for=""></label>
+                        <input type="radio" data-text='开发票' name="kfp" class="kaifapiao" value="0">
+                    </div>
+                </div>
+                <div class="fapiaoInfo">
+                    <div class="l-fields">
+                        <div class="l-field">
+                            <label for="">发票类型</label>
+                            <input type="text" value="增值税普通发票" name="a" readonly="">
+                        </div>
+                        <div class="l-field">
+                            <label for="">发票内容</label>
+                            <input type="text" value="服务费" name="a" readonly="">
+                        </div>
+                        <div class="l-field">
+                            <label for="">发票抬头</label>
+                            <input type="text" value="个人" name="a">
+                        </div>
+                        <div class="l-field">
+                            <label for="">收件人姓名</label>
+                            <input type="text" value="" name="a">
+                        </div>
+                        <div class="l-field">
+                            <label for="">联系方式</label>
+                            <input type="text" value="" name="a">
+                        </div>
+                    </div>
+                    <div class="l-fields">
+                        <div class="l-field">
+                            <label for="">寄送地址</label>
+                            <div class="l-field-layout">
+                                <div class="l-float-left">
+                                    <select id="s_province" name="s_province"></select>&nbsp;&nbsp;
+                                    <select id="s_city" name="s_city"></select>&nbsp;&nbsp;
+                                    <select id="s_county" name="s_county"></select>
+                                </div>
+                                <div class="l-float-left">
+                                <input type="hidden" name="adsfafd" class="fapiaodizhiA">
+                                    <input class="fapiaodizhi fapiaodizhiB" type="text" name="b" style="width:200px">
+                                </div>
+                                <div class="l-float-clear"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="l-table">
+                <div class="l-table-cell"></div>
+                <div class="l-table-cell l-align-right total-price">￥123</div>
+                <div class="l-table-cell" style="width:150px">
+                    <input type="reset" value="重置" class="m-button-cancel m-reset">
+                    <input type="submit" value="确定" class="m-button m-submit">
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

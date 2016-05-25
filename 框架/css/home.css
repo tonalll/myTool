@@ -1,0 +1,202 @@
+@charset "utf-8";
+/*头部*/
+#body{width: 1200px;margin: 0 auto;}
+#head{height: 5em;font-size: 1em;background: #2E8CF0;}
+html,body{height: auto!important;overflow: auto!important;}
+
+.logo{height: 4em;width: 4em;background: url(../img/home/logo2.png) center center no-repeat;cursor: pointer;}
+#head .title{font-size: 2em;color: #fff;font-weight: bold;}
+#head .menu{vertical-align: middle;color: #fff;font-size: 1.2em;cursor: pointer;text-align: center;}
+#head .menu:hover{background: url(../img/black-alpha-1.png);}
+#head .menu.select{background: url(../img/black-alpha-1.png);}
+.zhongyaotongzhi{text-align: center;line-height: 2em;color: #f00;}
+.zhongyaotongzhi .text{font-size: 18px;}
+.zhongyaotongzhi .close{width: 50px;cursor: pointer;background: #f00;color: #fff;vertical-align: middle;}
+
+.showLogin{width: 50%;float: left;text-align: center;cursor: pointer;background:  url(../img/white-alpha-5.png);color: #000;height: 5em;line-height: 5em;font-size: 14px}
+.showLogin:hover{cursor: pointer;background:  url(../img/white-alpha-9.png);}
+.showRegister{width: 50%;float: left;text-align: center;cursor: pointer;background:  url(../img/white-alpha-5.png);color: #000;height: 5em;line-height: 5em;font-size: 14px}
+.showRegister:hover{cursor: pointer;background:  url(../img/white-alpha-9.png);}
+
+.loginOver{height: 5em;cursor: pointer;background:  url(../img/white-alpha-5.png);}
+.loginName{height: 50%;text-align: center;color: #000;overflow: hidden;line-height: 2.5em;text-indent: 5px}
+.gotoWork{float: left;width: 33%;height: 50%;text-align: center;color: #000;line-height: 2.5em;background:  url(../img/white-alpha-3.png);}
+.exit{float: left;width: 33%;height: 50%;text-align: center;color: #000;line-height: 2.5em;background:  url(../img/white-alpha-3.png);}
+.gotoDingdan{float: left;width:33%;height: 50%;text-align: center;color: #000;line-height: 2.5em;background:  url(../img/white-alpha-3.png);}
+.gotoWork:hover,.gotoDingdan:hover,.exit:hover{background:  url(../img/white-alpha-9.png);}
+
+
+
+
+.banner { height: 400px; position: relative; width: 100%; overflow: hidden;}
+.banner-buttonLayout { position: absolute; z-index: 2; width: 100%; bottom: 0px;}
+.banner-buttonLayout ul { text-align: center;}
+.banner-button { display: inline-block; height: 24px; width: 24px; background: url("../img/home/banner-button.png"); cursor: pointer;}
+.banner-button-hover { background: url("../img/home/banner-button-hover.png") !important;}
+.banner-list { height: 100%; width: 100%;}
+.banner-list ul { position: absolute; height: 100%; width: 100%;}
+.banner-list li { height: 100%; width: 100%;}
+.banner-list ul a { display: block; width: 100%; height: 100%;text-align: center;}
+/*产品购买*/
+.shop-layout .l-table-cell{vertical-align: middle;}
+.sell-unit{background: #FFF2EC;}
+/*.sell-unit:hover{background: #FFE6D9;}*/
+.shopping{padding: 10px;display:block;font-size: 20px;background: #FF9B40;cursor: pointer;color: #fff;text-align: center;}
+.shopping:hover{padding: 10px;font-size: 20px;background: #FF7540;cursor: pointer;color: #fff;text-align: center;}
+.price{color: #f00;font-size: 16px;width: 38%;text-align: center;}
+.price .tag{font-size: 40px;font-weight: bold;}
+.shop-title{font-weight: bold;font-size: 16px;color: #555;}
+.shop-text{color: #888;font-size: 12px}
+
+
+.wapper_home{ width: 1200px; margin: 0 auto;}
+.wapper_w1000{ max-width: 1000px; margin: 0 auto;}
+
+/*图文展示*/
+.display-text{width: 45%; vertical-align: middle;}
+.display-title{font-size: 50px;font-weight: bold;text-align: left;}
+.display-con{font-size: 20px;background: url(../img/home/yundian.png) -5px 0 no-repeat;padding-left: 20px;letter-spacing: 1px;text-align: left;}
+.display-img{width: 60%;}
+.display-img img{max-width: 500px;}
+
+
+.footer{text-align: center;padding: 20px 0;background: #555555;color: #fff;}
+
+/*日志*/
+.rizhiTab{width: 1200px;margin: 0 auto;}
+.rizhiTab .m-tab-bar .l-align-center {display: table-cell;text-align: center;background-color: #aaa;cursor: pointer;}
+.rizhiTab .m-tab-bar .android{background: url(../img/android.png) left center no-repeat;display: inline-block;cursor: pointer;color: #fff;font-size: 30px;padding: 10px;text-indent: 30px;}
+.rizhiTab .m-tab-bar .rizhi-hover .android{background: url(../img/android-hover.png) left center no-repeat;display: inline-block;cursor: pointer;color: #fff;font-size: 30px;padding: 10px;text-indent: 30px;}
+.rizhiTab .m-tab-bar .web{background: url(../img/web.png) left center no-repeat;display: inline-block;cursor: pointer;color: #fff;font-size: 30px;padding: 10px;text-indent: 30px;}
+.rizhiTab .m-tab-bar .rizhi-hover .web{background: url(../img/web-hover.png) left center no-repeat;display: inline-block;cursor: pointer;color: #fff;font-size: 30px;padding: 10px;text-indent: 30px;}
+
+.rizhi-hover{background-color: #2E8CF0!important;}
+
+.rizhiTitle{text-align: right;font-size: 30px;}
+.rizhiTime{text-align: right;font-size: 14px;}
+.rizhiLeft{border-right: 2px solid #2E8CF0;padding-right: 5px;}
+.rizhiCon{padding-left: 10px;}
+.rizhiConLayout .l-table-cell{padding-top: 10px;padding-bottom: 10px;border-bottom: 2px solid #fff;}
+
+.rizhiConLayout .l-table-row:hover .l-table-cell{border-bottom: 2px solid #2E8CF0;}
+
+/*安全声明*/
+.safe-title{font-size: 25px;background: url(../img/home/yundian.png) left center no-repeat;padding-left: 30px;margin-top:10px;}
+.safe-img{width: 300px;margin-bottom: 10px;}
+.safe-img img{}
+.safe-text{vertical-align: top;}
+
+
+/*登录*/
+.loginLayout{position: absolute;background: #fff;display: none;}
+.loginTitle{padding: 10px;width: 400px;background: #eee;}
+.loginClose{position: absolute;top:10px;right: 10px;width: 16px;height: 12px;cursor: pointer;background: url(../img/m-dialog-control.png) -10px -54px no-repeat;}
+.loginSubmit{cursor: pointer;color: #fff;background: #2E8CF0;border: none!important;padding: 5px 0;width: 100%;display: block;text-indent: 0!important;}
+.login{margin-top: 20px;margin-bottom: 20px;}
+.login .l-table{width: 380px;margin: 0 auto}
+.login .l-table .l-table-cell{position: relative;}
+.login .l-table .username{padding: 5px 0 5px 30px;background: url(../img/home/ico-user.png) left center no-repeat;display: block;border: 1px solid #ddd;width: 330px}
+.login .user-pass-pos{ position: absolute; top: 0; left: 30px; font-size: 14px; height: 30px; line-height: 30px; width: 330px;}
+.login .l-table .userpassword{padding: 5px 0 5px 30px;background: url(../img/home/ico-lock.png) left center no-repeat;display: block;border: 1px solid #ddd;width: 330px}
+.login .l-table .testcode{background: url(../img/home/ico-lock.png) left center no-repeat;width: 145px;padding: 5px 0;padding-left: 30px;float: left;text-indent: 5px;border: 1px solid #ddd;}
+.login .l-table .testcodeImg{width: 100%;height: 26px;padding: 1px;border: 1px solid #ddd;float: left;overflow: hidden;}
+.login .l-table .testcodeNew{height: 28px;width: 35px;background: url(../img/newTestCode.png) center center no-repeat;cursor: pointer;}
+.loginMsg{position: absolute;top: 0;background: #2e8cf0;padding: 10px 0;width: 100%;color: #fff;display: none;text-align: center;}
+.loginToRegister{text-align: center;cursor: pointer;background: #ddd;padding: 5px 0}
+.loginToRegister:hover{background: #2e8cf0;color: #fff;}
+
+.NewsfoundTologin{text-align: center;cursor: pointer;background: #ddd;padding: 5px 0}
+.NewsfoundTologin:hover{background: #2e8cf0;color: #fff;}
+/*注册*/
+.registerLayout{position: absolute;background: #fff;display: none;}
+.registerTitle{padding: 10px;width: 400px;background: #eee;}
+.registerClose{position: absolute;top:10px;right: 10px;width: 16px;height: 12px;cursor: pointer;background: url(../img/m-dialog-control.png) -10px -54px no-repeat;}
+.registerSubmit{cursor: pointer;color: #fff;background: #2E8CF0;border: none!important;padding: 5px 0;width: 100%;display: block;text-indent: 0!important;}
+.register{margin-top: 20px;margin-bottom: 20px;}
+.register .l-fields{width: 380px;margin: 0 auto}
+.register .l-table{width: 380px;margin: 0 auto}
+.registerMsg{position: absolute;top: 0;background: #2e8cf0;padding: 10px 0;width: 100%;color: #fff;display: none;text-align: center;}
+.phoneCodeNew{float: left;width:100%;cursor: pointer;background: #2e8cf0;height: 25px;line-height: 25px;color: #fff;text-align: center;}
+.phoneCodeNewSleep{background: #ddd!important;cursor:auto!important; color: #000;}
+.shouji{margin-right: 10px;}
+.shouji,.email{cursor: pointer;color: #fff;background: #aaa;padding:0 5px; height: 28px;line-height: 28px;display: inline-block;}
+.shouji:hover,.email:hover{background: #2e8cf0;}
+.yzmHover{background: #2e8cf0;}
+.tiaokuan a{color: #2e8cf0;font-weight: bold;}
+.tiaokuan label.error{width: 100%;display: block;}
+.registerToLogin{text-align: center;cursor: pointer;background: #ddd;padding: 5px 0}
+.registerToLogin:hover{background: #2e8cf0;color: #fff;}
+
+/*注册成功*/
+.registerOverLayout{position: absolute;background: #fff;display: none;width: 300px;height: 200px;}
+.registerOverTitle{padding: 10px;width: 280px;background: #eee;}
+.registerOverClose{position: absolute;top:10px;right: 10px;width: 16px;height: 12px;cursor: pointer;background: url(../img/m-dialog-control.png) -10px -54px no-repeat;}
+.registerOverMsg{position: absolute;top: 50px;padding: 10px 0;width: 100%;color: #000;text-align: center;font-size: 20px}
+
+/*找回密码*/
+.newfoundLayout{position: absolute;background: #fff;display: none;}
+.newfoundTitle{padding: 10px;width: 400px;background: #eee;}
+.newfoundClose{position: absolute;top:10px;right: 10px;width: 16px;height: 12px;cursor: pointer;background: url(../img/m-dialog-control.png) -10px -54px no-repeat;}
+.newfoundSubmit{cursor: pointer;color: #fff;background: #2E8CF0;border: none!important;padding: 5px 0;width: 100%;display: block;text-indent: 0!important;}
+
+.newfound{margin-top: 20px;margin-bottom: 20px;}
+.newfound .l-fields{width: 380px;margin: 0 auto}
+.newfound .l-table{width: 380px;margin: 0 auto}
+.newfoundMsg{position: absolute;top: 0;background: #2e8cf0;padding: 10px 0;width: 100%;color: #fff;display: none;text-align: center;}
+.showNewsfound{text-align: center;cursor: pointer;background: #ddd;padding: 5px 0}
+.showNewsfound:hover{background: #2e8cf0;color: #fff;}
+
+/*找回成功*/
+.newfoundOverLayout{position: absolute;background: #fff;display: none;width: 300px;height: 200px;}
+.newfoundOverTitle{padding: 10px;width: 280px;background: #eee;}
+.newfoundOverClose{position: absolute;top:10px;right: 10px;width: 16px;height: 12px;cursor: pointer;background: url(../img/m-dialog-control.png) -10px -54px no-repeat;}
+.newfoundOverMsg{position: absolute;top: 50px;padding: 10px 0;width: 100%;color: #000;text-align: center;font-size: 20px}
+
+
+/* 
+.login li{margin-bottom: 5px; position: relative;}
+.login li .user-pass-pos{ position: absolute; top: 50%; margin-top: -10px; left: 63px; font-size: 14px; height: 30px; line-height: 30px; width: 270px;}
+.login input{display: block;width: 70%;border: 1px solid #aaa;margin: 0 auto;padding: 5px 30px;text-indent: 30px;}
+.backPassword{width: 70%;display: block;margin: 0 auto;}
+.username{background: url(../img/home/ico-user.png) left center no-repeat;}
+.userpassword{background: url(../img/home/ico-lock.png) left center no-repeat;}
+.loginLayout .yanzhengma{width: 70%;margin: 0 auto;text-align: left;} */
+
+
+/*验证相关*/
+.error{color: #f00;}
+
+
+/*二维码*/
+.posright-img{right: 50px; position: fixed; width: 150px; height: 150px; background: #f60; top: 500px;}
+
+/*帮助中心*/
+.help-list{max-width: 1000px; margin: 0 auto;}
+.l-table-help{ display: table; width: 100%;border-spacing:2em;}
+.table-cell-help{display: table-cell;height:500px;}
+.table-cell-help .left-list-bt{ background: #e4e4e4; min-height: 300px;}
+.table-cell-help .left-list-bt li{ height: 50px; line-height: 50px; text-align:center; font-size: 18px; cursor: pointer;}
+.table-cell-help .left-list-bt li.help-left-bt{ background: #2E8CF0 ; color: #fff;}
+.help-con .con-list-help{ display: none; border: 2px solid #ccc; padding: 14px; min-height: 300px;}
+.help-con .con-list-help p{ font-size: 16px; margin-bottom: 15px;}
+
+
+
+/*百度商桥定时弹窗改为点击关闭按钮后不再弹窗*/
+html body .qiao-invite-wrap-zdy{display: none!important;}
+
+/*帮助中心跳转*/
+
+.but_webpage{
+	display: block;
+	cursor: pointer;
+    font-size: 18px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    color: #666;
+}
+.but_webpage:hover{
+	background: #2e8cf0;
+	color: #fff;
+}

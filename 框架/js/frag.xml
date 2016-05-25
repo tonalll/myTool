@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<_AJAX_>
+    <!-- 单选多选 -->
+    <_PAGE_ id="onoff">
+        <![CDATA[
+<span class="m-onoff"><span class="m-onoff-block"></span></span><span class='m-onoff-text'></span>
+]]>
+    </_PAGE_>
+    <!-- dialog -->
+    <_PAGE_ id="dialog">
+        <![CDATA[
+<div class="m-dialog l-border c-bdColor-a">
+        <div class="m-dialog-head l-table c-bgColor-e">
+            <div class="l-table-cell m-dialog-title">未命名标题</div>
+            <div class="l-table-cell l-align-right">
+                <div class="m-dialog-max m-dialog-control"></div>
+                <div class="m-dialog-reset m-dialog-control"></div>
+                <div class="m-dialog-close m-dialog-control"></div>
+
+            </div>
+        </div>
+        <div class="m-dialog-body m-scrollbar"></div>
+            <div class="m-dialog-resize m-dialog-control"></div>
+<!--         <div class="m-dialog-foot c-bgColor-e l-align-right">
+            <div class="m-button-cancel m-dialog-cancle">取消</div>
+            <div class="m-button m-dialog-ok">确定</div>
+        </div> -->
+    </div>
+]]>
+    </_PAGE_>
+    <!-- dialog-stage -->
+    <_PAGE_ id="dialog-stage">
+        <![CDATA[
+<div class="dialog-stage">
+    <div class="dialog-stage-head l-table">
+        <div class="l-table-cell"></div>
+        <div class="l-table-cell l-align-right">
+            <div class="m-button dialog-stage-back">返回</div>
+        </div>
+    </div>
+    <div class="dialog-stage-body"></div>
+</div>
+]]>
+    </_PAGE_>
+    <!-- stage -->
+    <_PAGE_ id="stage">
+        <![CDATA[
+<div class="stage">
+    <div class="stage-head l-table">
+        <div class="l-table-cell stage-title"></div>
+        <div class="l-table-cell l-align-right">
+            <div class="stage-back">返回</div>
+        </div>
+    </div>
+    <div class="stage-body"></div>
+</div>
+]]>
+    </_PAGE_>
+    <!-- superStage -->
+    <_PAGE_ id="superStage">
+        <![CDATA[
+<div class="m-superStage" id="superStage-spjc">
+    <div class="l-table-collapse head">
+        <div class="l-table-cell title">标题</div>
+        <div class="l-table-cell close"></div>
+    </div>
+    <div class="body">asdf</div>
+</div>
+]]>
+    </_PAGE_>
+    <!--加载遮罩-->
+    <_PAGE_ id="ajax-mask">
+        <![CDATA[
+<div id="m-ajax-mask">
+    <div id="m-ajax-animate"></div>
+</div>
+]]>
+    </_PAGE_>
+    <!--初始化遮罩-->
+    <_PAGE_ id="init-mask">
+        <![CDATA[
+<div id="m-init-mask">
+    <div id="m-init-animate"></div>
+</div>
+]]>
+    </_PAGE_>
+    <!--    dialog遮罩-->
+    <_PAGE_ id="dialog-mask">
+        <![CDATA[
+<div id="m-dialog-mask">
+</div>
+]]>
+    </_PAGE_>
+    <!--    alert组件-->
+    <_PAGE_ id="alert">
+        <![CDATA[
+<div class="m-alert">
+    <div class="m-alert-con"></div>
+    <div class="m-alert-close">确定</div>
+</div>
+]]>
+    </_PAGE_>
+    <!--    notice组件-->
+    <_PAGE_ id="notice">
+        <![CDATA[
+<div class="m-alert">
+    <div class="m-alert-con"></div>
+</div>
+]]>
+    </_PAGE_>
+    <!--    alert遮罩-->
+    <_PAGE_ id="alert-mask">
+        <![CDATA[
+<div id="m-alert-mask">
+</div>
+]]>
+    </_PAGE_>
+    <!--    confirm组件-->
+    <_PAGE_ id="confirm">
+        <![CDATA[
+<div class="m-alert">
+    <div class="m-alert-con"></div>
+    <div class="m-alert-cancle">取消</div>
+    <div class="m-alert-close">确定</div>
+</div>
+]]>
+    </_PAGE_>
+    <!--    taskBar unit-->
+    <_PAGE_ id="unit">
+        <![CDATA[
+<div class="unit" desk-option='{"id":"{id}","url":"{url}","title":"{title}","ico":"{ico}","autoRefresh":{autoRefresh}}'>
+            <div class="ico"></div>
+            <div class="title c-bgColor-a">{title}</div>
+        </div>
+]]>
+    </_PAGE_>
+    <!-- 日期控件 -->
+    <_PAGE_ id="calendarFrag">
+        <![CDATA[
+<div id="calendar">
+    <div class="main">
+        <div class="head">
+            <table width="100%" border="0" cellpadding="0" cellspacing="2">
+            <tr>
+                <td><select name="year"></select></td>
+                <td><select name="month"></select></td>
+                <td width="20"><span class="close">×</span></td>
+            </tr>
+            </table>
+        </div>
+        <div class="body">
+            <dl class="dayNames"><dt>日</dt><dt>一</dt><dt>二</dt><dt>三</dt><dt>四</dt><dt>五</dt><dt>六</dt></dl>
+            <dl class="days">日期列表选项</dl>
+            <div style="clear:both;height:0;line-height:0"></div>
+            
+        </div>
+        
+        <div class="foot">
+            <table class="time">
+                <tr>
+                    <td>
+                        <input type="text" class="hh" maxlength="2" start="0" end="23"/>:
+                        <input type="text" class="mm" maxlength="2" start="0" end="59"/>:
+                        <input type="text" class="ss" maxlength="2" start="0" end="59"/>
+                    </td>
+                    <td><ul><li class="up">&and;</li><li class="down">&or;</li></ul></td>
+                </tr>
+            </table>
+            <button type="button" class="clearBut">清空</button>
+            <button type="button" class="okBut">确定</button>
+        <div>
+        <div class="tm">
+            <ul class="hh">
+                <li>0</li>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+                <li>10</li>
+                <li>11</li>
+                <li>12</li>
+                <li>13</li>
+                <li>14</li>
+                <li>15</li>
+                <li>16</li>
+                <li>17</li>
+                <li>18</li>
+                <li>19</li>
+                <li>20</li>
+                <li>21</li>
+                <li>22</li>
+                <li>23</li>
+            </ul>
+            <ul class="mm">
+                <li>0</li>
+                <li>5</li>
+                <li>10</li>
+                <li>15</li>
+                <li>20</li>
+                <li>25</li>
+                <li>30</li>
+                <li>35</li>
+                <li>40</li>
+                <li>45</li>
+                <li>50</li>
+                <li>55</li>
+            </ul>
+            <ul class="ss">
+                <li>0</li>
+                <li>10</li>
+                <li>20</li>
+                <li>30</li>
+                <li>40</li>
+                <li>50</li>
+            </ul>
+        </div>
+    </div>
+</div>
+]]>
+    </_PAGE_>
+</_AJAX_>

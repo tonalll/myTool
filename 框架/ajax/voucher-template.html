@@ -1,0 +1,284 @@
+<!--<div class="voucherLayout" data-url='/resource/voucher/js/data.json'>-->
+<!-- <div class="voucherLayout" data-url="${root!}/account/account_voucher/${get_data_url!}" layoutH="30"> -->
+<div class="voucherLayout m-scrollbar" data-url="${get_data_url!}">
+    <form action="${root!}/account/account_voucher/${save_url!}" data-editUrl='${root!}/account/account_voucher/update1'>
+        <input class="text " type="hidden" name="av.id" />
+        <input class="text " type="hidden" name="av.over_id" />
+        <input class="text " type="hidden" name="av.period_month" />
+        <input class="text " type="hidden" name="av.period_year" />
+        <input class="text"  type="hidden" id="select_paper" name="select_paper" value="${select_paper!}"/>
+        <div class="voucher_wrap">
+            <div class="voucher-head">
+                <div class="m-title l-align-center">记账凭证</div>
+                <div class="l-table">
+                    <div class="l-table-cell"><span class="m-text">名称</span>
+                        <input style="width:120px" type="text">
+                    </div>
+                </div>
+            </div>
+            <table class="voucher" data-zhaiyao='${root!}/account/account_remark/getRemarkByVoucher' data-tree='${root!}/account/account_voucher/captionLookup' data-account='${root!}/account/account_caption/getCaption_1' data-tr='${root!}/resource/voucher/ajax/tr.html' data-isItem='${root!}/resource/voucher/ajax/isItem.html' data-itemsUrl='${root!}/account/account_voucher/getAuxiliaryAccount'>
+                <thead>
+                    <tr>
+                        <th class="addtr"></th>
+                        <th class="zhaiyao">摘要</th>
+                        <th class="kemu">会计科目</th>
+                        <th class="shuliang">数量</th>
+                        <th class="huobi">币别</th>
+                        <th class="col_money"> <strong class="tit">借方金额</strong>
+                            <div class="money_unit"> <span>亿</span> <span>千</span> <span>百</span> <span>十</span> <span>万</span> <span>千</span> <span>百</span> <span>十</span> <span>元</span> <span>角</span> <span class="last">分</span>
+                            </div>
+                        </th>
+                        <th class="col_money daifangjine"> <strong class="tit">贷方金额</strong>
+                            <div class="money_unit"> <span>亿</span> <span>千</span> <span>百</span> <span>十</span> <span>万</span> <span>千</span> <span>百</span> <span>十</span> <span>元</span> <span>角</span> <span class="last">分</span>
+                            </div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="entry_item">
+                        <td class="addtr">
+                            <div class="operate">
+                                <span title="增加分录" class="add"></span>
+                                <span title="删除分录" class="del"></span>
+                            </div>
+                        </td>
+                        <td class="zhaiyao" data-edit="summary">
+                        <div class="zhaiyaoLayout">
+                            <div class="cell_val summary_val"></div>
+                            <input type="hidden" name="id" />
+                            <!-- <input type="text" name="remark" autocomplete="off" class="edit_summary" style="display: none;"> -->
+                            <textarea class="edit_summary" style="display: none;" name="remark" id="" cols="30" rows="10"></textarea>
+                            </div>
+                        </td>
+                        <td class="kemu" data-edit="subject">
+                            <div class="kemuLayout">
+                                <div class="cell_val subject_val"></div>
+                                <input class="items-id" type="hidden" name="caption_id" value="">
+                                <input data-itemListId='6' class="items-dept" type="hidden" name="dept" value="">
+                                <input data-itemListId='5' class="items-supplier" type="hidden" name="supplier" value="">
+                                <input data-itemListId='1' class="items-custom" type="hidden" name="custom" value="">
+                                <input data-itemListId='2' class="items-emp" type="hidden" name="emp" value="">
+                                <input data-itemListId='4' class="items-inventory" type="hidden" name="inventory" value="">
+                                <input data-itemListId='3' class="items-project" type="hidden" name="project" value="">
+                                <input class="items-zdyId" type="hidden" name="zdyId" value="">
+                                <input class="items-zdyValue" type="hidden" name="zdyValue" value="">
+                                <input type="text" name="caption_name" autocomplete="off" data-value='' class="edit_subject" style="display: none;">
+                                <div class="kemu_button">科目</div>
+                            </div>
+                        </td>
+                        <td class="shuliang">
+                            <div class="cell_val quantity_val"></div>
+                        </td>
+                        <td class="huobi">
+                            <div class="cell_val curr_val"></div>
+                        </td>
+                        <td class="jiefangjine" data-edit="money">
+                            <div class="cell_val debit_val"></div>
+                            <input type="text" autocomplete="off" class="edit_money" name="debit" style="ime-mode: disabled;display:none">
+                        </td>
+                        <td class="daifangjine" data-edit="money">
+                            <div class="cell_val credit_val"></div>
+                            <input type="text" autocomplete="off" class="edit_money" name="credit" style="ime-mode: disabled;display:none">
+                        </td>
+                    </tr>
+                    <tr class="entry_item">
+                        <td class="addtr">
+                            <div class="operate">
+                                <span title="增加分录" class="add"></span>
+                                <span title="删除分录" class="del"></span>
+                            </div>
+                        </td>
+                        <td class="zhaiyao" data-edit="summary">
+                        <div class="zhaiyaoLayout">
+                            <div class="cell_val summary_val"></div>
+                            <input type="hidden" name="id" />
+                            <!-- <input type="text" name="remark" autocomplete="off" class="edit_summary" style="display: none;"> -->
+                            <textarea class="edit_summary" style="display: none;" name="remark" id="" cols="30" rows="10"></textarea>
+                            </div>
+                        </td>
+                        <td class="kemu" data-edit="subject">
+                            <div class="kemuLayout">
+                                <div class="cell_val subject_val"></div>
+                                <input class="items-id" type="hidden" name="caption_id" value="">
+                                <input data-itemListId='6' class="items-dept" type="hidden" name="dept" value="">
+                                <input data-itemListId='5' class="items-supplier" type="hidden" name="supplier" value="">
+                                <input data-itemListId='1' class="items-custom" type="hidden" name="custom" value="">
+                                <input data-itemListId='2' class="items-emp" type="hidden" name="emp" value="">
+                                <input data-itemListId='4' class="items-inventory" type="hidden" name="inventory" value="">
+                                <input data-itemListId='3' class="items-project" type="hidden" name="project" value="">
+                                <input class="items-zdyId" type="hidden" name="zdyId" value="">
+                                <input class="items-zdyValue" type="hidden" name="zdyValue" value="">
+                                <input type="text" name="caption_name" autocomplete="off" data-value='' class="edit_subject" style="display: none;">
+                                <div class="kemu_button">科目</div>
+                            </div>
+                        </td>
+                        <td class="shuliang">
+                            <div class="cell_val quantity_val"></div>
+                        </td>
+                        <td class="huobi">
+                            <div class="cell_val curr_val"></div>
+                        </td>
+                        <td class="jiefangjine" data-edit="money">
+                            <div class="cell_val debit_val"></div>
+                            <input type="text" autocomplete="off" class="edit_money" name="debit" style="ime-mode: disabled;display:none">
+                        </td>
+                        <td class="daifangjine" data-edit="money">
+                            <div class="cell_val credit_val"></div>
+                            <input type="text" autocomplete="off" class="edit_money" name="credit" style="ime-mode: disabled;display:none">
+                        </td>
+                    </tr>
+                    <tr class="entry_item">
+                        <td class="addtr">
+                            <div class="operate">
+                                <span title="增加分录" class="add"></span>
+                                <span title="删除分录" class="del"></span>
+                            </div>
+                        </td>
+                        <td class="zhaiyao" data-edit="summary">
+                        <div class="zhaiyaoLayout">
+                            <div class="cell_val summary_val"></div>
+                            <input type="hidden" name="id" />
+                            <!-- <input type="text" name="remark" autocomplete="off" class="edit_summary" style="display: none;"> -->
+                            <textarea class="edit_summary" style="display: none;" name="remark" id="" cols="30" rows="10"></textarea>
+                            </div>
+                        </td>
+                        <td class="kemu" data-edit="subject">
+                            <div class="kemuLayout">
+                                <div class="cell_val subject_val"></div>
+                                <input class="items-id" type="hidden" name="caption_id" value="">
+                                <input data-itemListId='6' class="items-dept" type="hidden" name="dept" value="">
+                                <input data-itemListId='5' class="items-supplier" type="hidden" name="supplier" value="">
+                                <input data-itemListId='1' class="items-custom" type="hidden" name="custom" value="">
+                                <input data-itemListId='2' class="items-emp" type="hidden" name="emp" value="">
+                                <input data-itemListId='4' class="items-inventory" type="hidden" name="inventory" value="">
+                                <input data-itemListId='3' class="items-project" type="hidden" name="project" value="">
+                                <input class="items-zdyId" type="hidden" name="zdyId" value="">
+                                <input class="items-zdyValue" type="hidden" name="zdyValue" value="">
+                                <input type="text" name="caption_name" autocomplete="off" data-value='' class="edit_subject" style="display: none;">
+                                <div class="kemu_button">科目</div>
+                            </div>
+                        </td>
+                        <td class="shuliang">
+                            <div class="cell_val quantity_val"></div>
+                        </td>
+                        <td class="huobi">
+                            <div class="cell_val curr_val"></div>
+                        </td>
+                        <td class="jiefangjine" data-edit="money">
+                            <div class="cell_val debit_val"></div>
+                            <input type="text" autocomplete="off" class="edit_money" name="debit" style="ime-mode: disabled;display:none">
+                        </td>
+                        <td class="daifangjine" data-edit="money">
+                            <div class="cell_val credit_val"></div>
+                            <input type="text" autocomplete="off" class="edit_money" name="credit" style="ime-mode: disabled;display:none">
+                        </td>
+                    </tr>
+                    <tr class="entry_item">
+                        <td class="addtr">
+                            <div class="operate">
+                                <span title="增加分录" class="add"></span>
+                                <span title="删除分录" class="del"></span>
+                            </div>
+                        </td>
+                        <td class="zhaiyao" data-edit="summary">
+                        <div class="zhaiyaoLayout">
+                            <div class="cell_val summary_val"></div>
+                            <input type="hidden" name="id" />
+                            <!-- <input type="text" name="remark" autocomplete="off" class="edit_summary" style="display: none;"> -->
+                            <textarea class="edit_summary" style="display: none;" name="remark" id="" cols="30" rows="10"></textarea>
+                            </div>
+                        </td>
+                        <td class="kemu" data-edit="subject">
+                            <div class="kemuLayout">
+                                <div class="cell_val subject_val"></div>
+                                <input class="items-id" type="hidden" name="caption_id" value="">
+                                <input data-itemListId='6' class="items-dept" type="hidden" name="dept" value="">
+                                <input data-itemListId='5' class="items-supplier" type="hidden" name="supplier" value="">
+                                <input data-itemListId='1' class="items-custom" type="hidden" name="custom" value="">
+                                <input data-itemListId='2' class="items-emp" type="hidden" name="emp" value="">
+                                <input data-itemListId='4' class="items-inventory" type="hidden" name="inventory" value="">
+                                <input data-itemListId='3' class="items-project" type="hidden" name="project" value="">
+                                <input class="items-zdyId" type="hidden" name="zdyId" value="">
+                                <input class="items-zdyValue" type="hidden" name="zdyValue" value="">
+                                <input type="text" name="caption_name" autocomplete="off" data-value='' class="edit_subject" style="display: none;">
+                                <div class="kemu_button">科目</div>
+                            </div>
+                        </td>
+                        <td class="shuliang">
+                            <div class="cell_val quantity_val"></div>
+                        </td>
+                        <td class="huobi">
+                            <div class="cell_val curr_val"></div>
+                        </td>
+                        <td class="jiefangjine" data-edit="money">
+                            <div class="cell_val debit_val"></div>
+                            <input type="text" autocomplete="off" class="edit_money" name="debit" style="ime-mode: disabled;display:none">
+                        </td>
+                        <td class="daifangjine" data-edit="money">
+                            <div class="cell_val credit_val"></div>
+                            <input type="text" autocomplete="off" class="edit_money" name="credit" style="ime-mode: disabled;display:none">
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <td class="addtr"></td>
+                    <td colspan="2" class="col_total">合计：<span id="capAmount"></span>
+                    </td>
+                    <td class="jiefangjine">
+                        <div class="cell_val debit_total" id="debit_total"></div>
+                        <input type="hidden" name="av.debit" id="totalJ">
+                    </td>
+                    <td class="daifangjine">
+                        <div class="cell_val credit_total" id="credit_total"></div>
+                        <input type="hidden" name="av.credit" id="totalD">
+                    </td>
+                </tfoot>
+            </table>
+            <div class="voucher-foot l-table">
+                <div class="l-table-cell">制单人：<span class="m-text">${create_person!}</span></div>
+                <div class="l-table-cell l-align-right">
+                    <div class="m-button voucher-template" target='stage' data-options='{"width":"80%","height":"80%","target":"window","title":"查看","url":"${root!}/paper/view?id=${paper.paper_id}"}'>模板</div>
+
+                    <div class="m-button hotKeyButton">快捷键
+                        <div class="l-layout">
+                            <table>
+                                <tr>
+                                    <td>回车键</td>
+                                    <td>跳转到下一单元格</td>
+                                </tr>
+                                <tr>
+                                    <td>“=”</td>
+                                    <td>自动计算借贷平衡</td>
+                                </tr>
+                                <tr>
+                                    <td>ctrl+s</td>
+                                    <td>保存凭证</td>
+                                </tr>
+                                <tr>
+                                    <td>F12</td>
+                                    <td>保存并新增</td>
+                                </tr>
+                                <tr>
+                                    <td>↑↓</td>
+                                    <td>向上向下选择科目</td>
+                                </tr>
+                                <tr>
+                                    <td>空格</td>
+                                    <td>自动切换借贷方金额</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <#if hasPermission ( "customer:paper")>
+                    <div target='stage' data-options='{"width":"100%","height":"100%","target":"window","title":"凭证模板","url":"${root!}/resource/ajax/voucher-template.html"}' class="m-button voucher-paper">添加电子凭证</div>
+                    </#if>
+                    <div class="m-button voucher-save">保存</div>
+                    <div class="m-button voucher-saveAndAdd">保存并新增</div>
+                </div>
+            </div>
+            <div id="tag">
+            </div>
+        </div>
+    </form>
+</div>
+<script>

@@ -1,0 +1,232 @@
+<div class="m-scrollbar">
+    <div class="m-title">
+        form组件
+    </div>
+    <div class="l-divider-005"></div>
+    <form action="">
+        <div class="l-fields">
+            <div class="l-field">
+                <label for="">日期组件</label>
+                <input class="date" type="text" name="name1">
+            </div>
+            <div class="l-field">
+                <label for="">下拉选择</label>
+                <select name="bbsa" id="" class="m-select required">
+                    <option value="" selected='selected'>请选择</option>
+                    <option value="2">选项2</option>
+                    <option value="3">选项3</option>
+                    <option value="4">选项4</option>
+                    <option value="5">选项5</option>
+                </select>
+            </div>
+            <div class="l-field">
+                <label for="">查找带回</label>
+                <input type="text" class="m-lookup required" target='dialog' name="look1" data-options='{"title":"添加","url":"ajax/lookupDialog.html"}' />
+            </div>
+            <div class="l-field">
+                <label for="">下拉搜索自定义回调</label>
+                <input type="text" class="dropdownSeurch" data-options="onClick:myclick,width:600,height:600,url:'ajax/dropdownSeurch.html',inputAble:false,timeOut:100" name="name4">
+                <input type="hidden" name="asdf">
+            </div>
+            <script>
+            function myclick(_$input, _$this) {
+                // console.info(_$this.attr('data-id'))
+                _$input.val(_$this.text());
+                _$input.parents('form').find('[name="asdf"]').val(_$this.attr('data-id'));
+            }
+            </script>
+            <div class="l-field">
+                <label for="">下拉树自定义回调</label>
+                <input type="text" name="name5" class="dropdownTree" data-options="width:600,height:600,inputAble:false,timeOut:100,url:'ajax/zTree.json',zTreeSetting:mysetting">
+            </div>
+            <script>
+            var mysetting = {
+                callback: {
+                    onClick: function(event, treeId, treeNode, clickFlag) {
+                        console.info($(event.target).parents('.ztree').data().$input)
+                    }
+                }
+            }
+            </script>
+            <div class="l-field">
+                <label for="">下拉搜索默认</label>
+                <input type="text" class="dropdownSeurch" data-options="width:600,height:600,url:'ajax/dropdownSeurch.html',inputAble:false,timeOut:100" name="name4">
+            </div>
+            <div class="l-field">
+                <label for="">下拉树</label>
+                <input type="text" name="name5" class="dropdownTree" data-options="width:600,height:600,inputAble:false,timeOut:100,url:'ajax/zTree.json'">
+            </div>
+            <div class="l-field">
+                <label for="">输入框名字</label>
+                <input type="text" name="name8">
+            </div>
+        </div>
+        <div class="l-fields">
+            <div class="l-field">
+                <label for="">日期组件</label>
+                <input class="date" type="text" name="name1">
+            </div>
+            <div class="l-field">
+                <label for="">下拉选择</label>
+                <select name="bbsa" id="" class="m-select required">
+                    <option value="" selected='selected'>请选择</option>
+                    <option value="2">选项2</option>
+                    <option value="3">选项3</option>
+                    <option value="4">选项4</option>
+                    <option value="5">选项5</option>
+                </select>
+            </div>
+            <div class="l-field">
+                <label for="">查找带回</label>
+                <input type="text" class="m-lookup required" target='dialog' name="look1" data-options='{"title":"添加","url":"ajax/lookupDialog.html"}' />
+            </div>
+            <div class="l-field">
+                <label for="">输入框名字</label>
+                <input type="text" name="name4">
+            </div>
+            <div class="l-field">
+                <label for="">输入框名字</label>
+                <input type="text" name="name5">
+            </div>
+            <div class="l-field">
+                <label for="">输入框名字</label>
+                <input type="text" name="name6">
+            </div>
+            <div class="l-field">
+                <label for="">输入框名字</label>
+                <input type="text" name="name7">
+            </div>
+            <div class="l-field">
+                <label for="">输入框名字</label>
+                <input type="text" name="name8">
+            </div>
+        </div>
+        <div class="l-fields">
+            <div class="l-field">
+                <label for="">单选按钮</label>
+                <input type="radio" data-text='单选项说明' class='required' name="danxuan.nam" value='1'>
+            </div>
+            <div class="l-field">
+                <label for=""></label>
+                <input type="radio" data-text='单选项说明' class='required' name="danxuan.nam" value='2'>
+            </div>
+            <div class="l-field">
+                <label for=""></label>
+                <input type="radio" data-text='单选项说明' class='required' name="danxuan.nam" value='3'>
+            </div>
+            <div class="l-field">
+                <label for="">多选</label>
+                <input type="checkbox" data-text='多选项说明' class='' name="duoxuan1" checked='checked'>
+            </div>
+            <div class="l-field">
+                <label for=""></label>
+                <input type="checkbox" data-text='多选项说明' class='' name="duoxuan2">
+            </div>
+            <div class="l-field">
+                <label for=""></label>
+                <input type="checkbox" data-text='多选项说明' class='' name="duoxuan2">
+            </div>
+        </div>
+        <!-- <input type="hidden" id="files_WU_FILE_0" value="html5-css3-学习.txt||.txt||/ueditor/jsp/upload/file/20150915/1442278669515032805.txt||52" name="files"> -->
+        <div>
+            <div upload-options="threads:1,fileNumLimit:1,swf:'/resource/ueditor/third-party/webuploader/Uploader.swf',server:'${root!}/cusfollow/uploadFile',upButton:'myupbutton',fileList:'mylist',resize: false,pick:'#myupload0'" id="myupload0">选择上传文件</div>
+            <div class="m-button" id="myupbutton0">上传</div>
+        </div>
+        <div id="mylist0">
+            <!-- <div id="WU_FILE_0" class="fileUnit fileUnitOk"><div class="fileSuccess" style="display: inline-block;">&nbsp;</div><div class="fileName">W3School离线电子书2013.09.chm</div><div class="fileCancel">&nbsp;</div><div class="fileError"></div><div class="fileProcessBar" style="opacity: 0.5; width: 100%; display: none;"></div></div> -->
+        </div>
+        <div class="l-segment l-border-0 l-align-right">
+            <input type="reset" class="m-button-cancel" value="重置" />
+            <input type="submit" class="m-button" value="确定" />
+        </div>
+    </form>
+    <div class="m-title">
+        form验证
+    </div>
+    <div class="l-divider-005"></div>
+    <form action="" class="ajaxSubmit">
+        <div class="l-fields">
+            <div class="l-field">
+                <label for="">日期组件</label>
+                <input class="date" type="text" name="name1">
+            </div>
+            <div class="l-field">
+                <label for="">下拉选择</label>
+                <select name="bbsa" id="" class="m-select required">
+                    <option value="" selected='selected'>请选择</option>
+                    <option value="2">选项2</option>
+                    <option value="3">选项3</option>
+                    <option value="4">选项4</option>
+                    <option value="5">选项5</option>
+                </select>
+            </div>
+            <div class="l-field">
+                <label for="">查找带回</label>
+                <input type="text" class="m-lookup required" target='dialog' name="look1" data-options='{"title":"添加","url":"ajax/lookupDialog.html"}' />
+            </div>
+            <div class="l-field">
+                <label for="">输入框名字</label>
+                <input type="text" name="name4">
+            </div>
+            <div class="l-field">
+                <label for="">输入框名字</label>
+                <input type="text" name="name5">
+            </div>
+            <div class="l-field">
+                <label for="">输入框名字</label>
+                <input type="text" name="name6">
+            </div>
+            <div class="l-field">
+                <label for="">输入框名字</label>
+                <input type="text" name="name7">
+            </div>
+            <div class="l-field">
+                <label for="">输入框名字</label>
+                <input type="text" name="name8">
+            </div>
+        </div>
+        <div class="l-fields">
+            <div class="l-field">
+                <label for="">单选按钮</label>
+                <input type="radio" data-text='单选项说明' class='required' name="danxuan2" value='1'>
+            </div>
+            <div class="l-field">
+                <label for=""></label>
+                <input type="radio" data-text='单选项说明' class='required' name="danxuan2" value='2'>
+            </div>
+            <div class="l-field">
+                <label for=""></label>
+                <input type="radio" data-text='单选项说明' class='required' name="danxuan2" value='3'>
+            </div>
+            <div class="l-field">
+                <label for="">多选</label>
+                <input type="checkbox" data-text='多选项说明' class='required' name="duoxuan1" checked='checked'>
+            </div>
+            <div class="l-field">
+                <label for=""></label>
+                <input type="checkbox" data-text='多选项说明' class='required' name="duoxuan2">
+            </div>
+            <div class="l-field">
+                <label for=""></label>
+                <input type="checkbox" data-text='多选项说明' class='' name="duoxuan3">
+            </div>
+        </div>
+        <div class="l-segment l-border-0 l-align-right">
+            <input type="reset" class="m-button-cancel" value="重置" />
+            <input type="submit" class="m-button" value="确定" />
+        </div>
+    </form>
+    <div class="m-title">按钮组</div>
+    <div class="l-divider-005"></div>
+    <div class="l-segment l-border-0">
+        <div class="m-button-list">
+            <ul>
+                <li>按钮1</li>
+                <li>按钮2</li>
+                <li>按钮3</li>
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
+</div>

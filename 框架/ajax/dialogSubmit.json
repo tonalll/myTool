@@ -1,0 +1,7 @@
+{
+"statusCode":200,
+"message":"提示信息！",
+"refreshWindow":"fenye",
+"closeDialog":true,
+"说明":"closeWindow:要关闭页面的id refreshWindow:要刷新页面的id "
+}

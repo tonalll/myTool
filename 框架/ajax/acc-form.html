@@ -1,0 +1,42 @@
+<div class="index_add">
+    <div class="info_one">
+        <div class="info_top">
+            <div class="left_tit">设置连续12个月收入上限</div>
+            <div class="right_img"><a href="#" class="remov_class">[关闭]</a></div>
+        </div>
+        <div class="info_but">
+            <label class="label-select">
+                <input name="one-list-btn" type="radio" value="800000">货物收入上限800000</label>
+            <label class="label-select">
+                <input name="one-list-btn" type="radio" value="5000000">服务收入上限5000000</label>
+        </div>
+        <div class="btn-list-acc">
+            <a href="javascript:;" class="btn-acc-conf">确定</a>
+            <a href="javascript:;" class="btn-acc-remo">取消</a>
+        </div>
+    </div>
+</div>
+<script>
+$(document).ready(function() {
+    $(".btn-acc-remo").click(function() {
+        $(".btn-acc-conf").parents(".add_index").empty();
+    });
+    
+    $(".btn-acc-conf").click(function() {
+        var acc_conf = $("input[type='radio']:checked").val();
+        $.ajax({
+            url: '/ind/config/setSrsx',
+            dataType: 'json',
+            type: 'POST',
+            data: {"je": acc_conf}
+        }).done(function(data) {
+        	var acc_json_one=$("#acc-json-one").attr("value");
+        	var acc_json_three=math.jian(acc_conf,acc_json_one);
+            $("#acc-json-two").text(math.toFixed(acc_conf,2)+"元");
+            $("#acc-json-three").text(math.toFixed(acc_json_three,2)+"元");
+        });
+        //这里是清空弹框内容
+        $(".btn-acc-conf").parents(".add_index").empty();
+    });
+});
+</script>
