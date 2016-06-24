@@ -1,0 +1,38 @@
+-----------------------------------jquery.poshytip.js-----------------------------------
+不足：表单滚动后提示信息位置不对
+解决：
+修改28行代码 			 '</div>'].join('')).appendTo(document.body);为			'</div>'].join('')).appendTo(this.$elm.offsetParent());
+修改184行代码			this.$tip.css({left: 0, top: 0}).appendTo(document.body);为			this.$tip.css({left: 0, top: 0}).appendTo(this.$elm.offsetParent());
+修改334行代码var elmOffset = this.$elm.offset(),为var elmOffset = this.$elm.position(),
+
+
+----------------------------------- jQuery Validation Plugin v1.13.1-----------------------------------
+不足，验证规则绑定不方便
+解决：增加属性验证配置
+171行插入			$.validator.attrRules( element ),
+965行插入 attrRules: function(element) {
+            var attr = $(element).attr('validate');
+            return attr ? $.zJSON(attr) : {};
+        },
+        配合提示插件使用
+        if ($.validator) $.extend($.validator.defaults, {
+            errorClass: 'validError',
+            errorPlacement: function(error, element) {
+                if (!element.is('[has-poshytip]')) {
+                    element.poshytip({
+                        content: error.text(),
+                        className: 'tip-yellowsimple',
+                        bgImageFrameSize: 10,
+                        alignTo: 'target',
+                        alignX: 'inner-left',
+                        offsetX: 0,
+                        offsetY: 5,
+                        keepInViewport: false
+                    }).attr('has-poshytip', '');
+                }
+                    element.poshytip('update', error.text()).poshytip('show');
+            },
+            submitHandler: function(_form) {
+                //                console.info('表单填写正确');
+            }
+        });

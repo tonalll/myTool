@@ -1,0 +1,42 @@
+rating 评分
+
+--api
+
+    $.fn.api.settings.api = {
+        'followers': 'index.html'
+    };
+    $('a[target=body]').each(function () {
+        var $this = $(this),
+            $body = $('.body');
+        $this.api({
+            action: 'followers',//这里调取的是上面的地址，不用在些url:''了，写了url覆盖上面的
+            on: 'click',
+            dataType:'html',
+            onSuccess: function (html) {
+                $body.html(html)
+            },
+            beforeSend: function (settings) {
+//                console.info(settings);
+                return settings;
+            }
+        });
+
+    });
+
+form
+$('#login').form('get values')
+$('#login').form('set values', {
+    userName     : 'Jsdgadddddck'
+  })
+
+$('#login').form('get values')
+
+通过module.invoke(query)方法处理上面的参数。最终找到对应的moduleForm对象get对象 values方法
+
+$module.data(moduleNamespace, module); 把module对象绑定到当前form的data()上面 通过$('form').data('moduleForm')或者$('form').data('module-form')访问
+
+console.info(values);
+
+multiple下拉是否多选
+selection下拉样式
+

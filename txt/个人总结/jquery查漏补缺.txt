@@ -1,0 +1,122 @@
+﻿$('body').ready(
+    function () {
+        $('body').on({
+            click: function (e) {
+                alert(e.data.name);
+            }
+        },'.imdiv', 
+                     {
+                         name: 'im name'
+                     });
+
+    }
+$('#head').on({
+        'click.a':function(){
+            console.info('click.a');
+        }
+    });
+ $('#head').off('click.a');
+
+
+$('div:eq(1)') $('div').eq(1) 选择索引个，从0开始
+$('div').index() 返回索引
+
+ajaxStart 	全局 	当Ajax请求开始时触发
+beforeSend 	局部 	发起请求前触发，可在发送请求之前修改xhr实例或者return false 取消请求
+ajaxSend 	全局 	发起请求前触发，可在发送请求之前修改xhr实例
+success 	局部 	请求返回一个成功响应时调用
+ajaxSuccess 	全局 	请求返回一个成功响应时调用
+error 	局部 	请求返回一个错误响应时调用
+ajaxError 	全局 	请求返回一个错误响应时调用
+complete 	局部 	请求结束时调用
+ajaxComplete 	全局 	请求结束时调用
+ajaxStop 	全局 	请求结束并且没有其它并发的请求处于激活状
+
+1.alert($('input:checked').length);
+2.alert($('input[checked]').length);
+3.alert($('input:checked').attr('checked'));
+4.alert($('input[checked]').attr('checked'));
+我刚在IE与chrome上测试，IE上，1与2相等，chrome上不等。但IE与chrome上，3与4都得到checked,所以你说的
+(因此$(this).attr('checked',!$(this).attr('checked'));这样做反选并不准确，正确的是$(this).attr({checked:!$(this).is('checked')})通过jquery来判断选中与否。)
+并不成立，而是两种方式都可以。只是单个赋值与多个赋值的差别，并没有体现结果的不同。
+
+$(this).attr({checked:!$(this).is('checked')})
+
+serialize表单序列化字符串
+serializeArray表单序列化成一个数组，第一项是一个对象
+param将一个数组，对象序列化字符串
+
+encodeURI加密
+encodeURIComponent
+decodeURI解密
+decodeURIComponent
+escape编码
+unescape解码
+
+contents所有节点，包含iframe
+
+message.replace(/\'/g,'"');
+
+slice
+[1,2,3,4].slice(1)
+
+[2, 3, 4]
+
+[1,2,3,4].slice(1,3)
+
+[2, 3]
+[1,2,3,4].slice(-3,-1)
+
+[2, 3]
+
+splice
+删除
+[1,2,3,4].splice(1,2) 起始索引 个数
+[1,4]
+插入
+[1,2,3,4].splice(1,0,'b','c')
+[1,'b','c',2,3,4]
+替换
+[1,2,3,4].splice(1,1,'b','c')
+[1,'b','c',3,4]
+
+concat() – 将两个或多个字符的文本组合起来，返回一个新的字符串。
+indexOf() – 返回字符串中一个子串第一处出现的索引。如果没有匹配项，返回 -1 。
+charAt() – 返回指定位置的字符。
+lastIndexOf() – 返回字符串中一个子串最后一处出现的索引，如果没有匹配项，返回 -1 。
+match() – 检查一个字符串是否匹配一个正则表达式。
+substring() – 返回字符串的一个子串。传入参数是起始位置和结束位置。
+replace() – 用来查找匹配一个正则表达式的字符串，然后使用新字符串代替匹配的字符串。
+search() – 执行一个正则表达式匹配查找。如果查找成功，返回字符串中匹配的索引值。否则返回 -1 。
+slice() – 提取字符串的一部分，并返回一个新字符串。
+split() – 通过将字符串划分成子串，将一个字符串做成一个字符串数组。
+length – 返回字符串的长度，所谓字符串的长度是指其包含的字符的个数。
+toLowerCase() – 将整个字符串转成小写字母。
+toUpperCase() – 将整个字符串转成大写字母。
+
+Function.apply(obj,args)方法能接收两个参数 
+obj：这个对象将代替Function类里this对象
+ args：这个是数组，它将作为参数传给Function（args-->arguments） 
+call:和apply的意思一样,只不过是参数列表不一样.
+
+1.丢弃小数部分,保留整数部分
+js:parseInt(7/2)
+2.向上取整,有小数就整数部分加1
+js: Math.ceil(7/2)
+3,四舍五入.
+js: Math.round(7/2)
+4,向下取整
+js: Math.floor(7/2) 
+5,取模
+100%49 //2
+
+var b=123
+b.toFixed(2)  //123.00
+
+
+
+
+
+
+
+

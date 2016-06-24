@@ -1,0 +1,15 @@
+ico 图标
+black 黑色
+white 白色
+alpha 透明
+
+vertical 垂直的
+horizontal 水平的
+statusCode 状态代码
+refresh 刷新
+
+wait 等待
+
+balance 平衡
+
+Cap  盖；帽子；军帽；求交运算

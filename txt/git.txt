@@ -1,4 +1,4 @@
-mkdir learngit 创建learngit目录
+﻿mkdir learngit 创建learngit目录
 cd learngit 进入learngit目录
 pwd 显示当前路径
 clear 清屏
@@ -53,6 +53,8 @@ git push origin :refs/tags/v1 再删除远程标签
 git tag # 当前仓库的所有标签
 git tag 当前分支的所有标签
 
+修改远程地址
+git remote set-url origin URL
 关联本地库到远程
 git remote add origin https://github.com/tonalll/node.git
 本地推送到远程

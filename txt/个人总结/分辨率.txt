@@ -1,0 +1,9 @@
+Dots Per Inch
+每英寸点数
+
+Pixels Per Inch
+每英寸像素
+
+pixel px
+
+point pt
