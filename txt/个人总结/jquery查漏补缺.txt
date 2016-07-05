@@ -15,7 +15,22 @@ $('#head').on({
             console.info('click.a');
         }
     });
+
  $('#head').off('click.a');
+
+$(document).trigger('windowAdd.' + options.id, options.id);
+$(document).on({
+                    ['windowAdd.' + options.id]: function (e, id) {
+                        console.info(id);
+                    }
+                });
+$(document).trigger('windowAdd.' + options.id, ['a','b']);
+$(document).on({
+                    ['windowAdd.' + options.id]: function (e, a,b) {
+                        console.info(a);
+			console.info(b);
+                    }
+                });
 
 
 $('div:eq(1)') $('div').eq(1) 选择索引个，从0开始
