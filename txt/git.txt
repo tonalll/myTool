@@ -12,6 +12,7 @@ git commit -m '222' 把缓存加入仓库当前分支
 git reset --hard HEAD^ 回到上一版本 工作区和缓存区会丢失当前
 git reset --hard HEAD^^
 git reset --hard HEAD~100
+git reset 025415  025415是提交后生成的指针标签
 
 git log 状态日志 log状态下按q退出日志
 
